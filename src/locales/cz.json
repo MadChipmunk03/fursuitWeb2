@@ -5,17 +5,30 @@
   "priceQuote": {
     "forms": ["Zvíře", "Protogen"],
     "animal": {
+      "suitTable": "Základí cena suitu",
       "suitTitile": "Jaký druh suitu byste chtěli commissinout?",
-      "animalTitle": "Jaký živočišný druh chcete commissinout?",
-      "animalVals": [ "Liška", "Vlk", "Kočka", "Jiné"],
-      "furTitle": "Kolik barev kožešin má vaše sona?",
-      "fleeceTitle": "Kolik barev fleecu má vaše sona?",
-      "notesTitle": "Poznámky",
-      "notesDesctiption": "např. odkaz na obrázky s návrhy"
-    },
-    "protogen": {
+      "suitVals": ["Mini parcial", "Partial", "Fullbody"],
 
+      "animalTitle": "Jaký živočišný druh chcete commissinout?",
+      "animalVals": ["Liška", "Vlk", "Kočka", "Jiné"],
+
+      "furTable": "Barvy kožešin",
+      "furTitle": "Kolik barev kožešin má vaše sona?",
+
+      "fleeceTable": "Barvy fleecu",
+      "fleeceTitle": "Kolik barev fleecu má vaše sona?",
+
+      "notesLabel": "např. odkaz na obrázky s návrhy",
+      "notesTitle": "Poznámky",
+
+      "emailLabel": "jardanovak@seznam.cz"
     },
-    "priceQuote": "Cenový odhad: "
+    "protogen": {},
+    "priceQuote": {
+      "title": "Cenový odhad: ",
+      "currencyCzk": "Kč",
+      "total": "Celkem"
+    },
+    "sendBtn": "Poslat odhad"
   }
 }
