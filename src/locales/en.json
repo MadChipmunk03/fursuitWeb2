@@ -1,0 +1,21 @@
+{
+  "preset": {
+    "welcome": "Welcome to Vuetify"
+  },
+  "priceQuote": {
+    "forms": ["Animal", "Protogen"],
+    "animal": {
+      "suitTitile": "Which type of suit would you like to commission?",
+      "animalTitle": "Which species would you like to commission?",
+      "animalVals": [ "Fox", "Wolf", "Cat", "Other"],
+      "furTitle": "How many colors of fur does your sona use?",
+      "fleeceTitle": "How many colors of fleece does your sona use?",
+      "notesTitle": "Notes",
+      "notesDesctiption": "e.g. link to pictures with draft"
+    },
+    "protogen": {
+
+    },
+    "priceQuote": "Price quote: "
+  }
+}
