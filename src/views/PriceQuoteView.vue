@@ -2,45 +2,60 @@
   <v-row>
     <v-spacer />
     <v-col cols="12" md="6" class="pa-0">
-      <v-card class="pa-8">
-        <!-- Select form -->
-        <FormSelect @selected-form="selectedForm = $event" />
+      <BForm :handleSubmit="sendForm">
+        <v-card class="pa-8">
+          <!-- Select form -->
+          <FormSelect @selected-form="selectedForm = $event" />
 
-        <!-- Form -->
-        <AnimalForm v-if="selectedForm === 'animal'" @form-obj="tableContent = $event" />
+          <!-- Form -->
+          <AnimalForm v-if="selectedForm === 'animal'" @form-obj="tableContent = $event" />
 
-        <v-divider />
+          <v-divider />
 
-        <!-- Price quote -->
-        <FormTable :tableContent="tableContent" />
+          <!-- Price quote -->
+          <FormTable :tableContent="tableContent" />
 
-        <v-divider />
+          <v-divider />
 
-        <!-- Send -->
-        <FormSend />
-      </v-card>
+          <!-- Send -->
+          <v-btn block class="submitBtn" color="primary" type="submit">{{ $t('priceQuote.sendBtn') }}</v-btn>
+        </v-card>
+      </BForm>
     </v-col>
     <v-spacer />
   </v-row>
 </template>
 
 <script lang="ts">
+import emailjs from '@emailjs/browser';
+
 import Vue from 'vue';
 import FormSelect from '../components/PriceQuote/FormSelect.vue';
 import AnimalForm from '@/components/PriceQuote/AnimalForm.vue';
 import FormTable from '@/components/PriceQuote/FormTable.vue';
-import FormSend from '../components/PriceQuote/FormSend.vue';
+import BForm from '../components/BForm.vue';
 
 export default Vue.extend({
   name: 'PriceQuoteView',
-  components: { FormSelect, AnimalForm, FormTable, FormSend },
+  components: { FormSelect, AnimalForm, FormTable, BForm },
   data() {
     return {
       selectedForm: 'animal',
-      tableContent: {},
+      tableContent: {} as any,
     };
+  },
+  methods: {
+    sendForm() {
+      emailjs.send('service_gmail_peta', 'template_bambi_animal', this.tableContent.emailVals, 'XOcIETAYuZScgoUa-');
+      console.log('☣', this.tableContent.emailVals);
+      console.log('sending form...');
+    },
   },
 });
 </script>
 
-<style scope lang="scss"></style>
+<style scope lang="scss">
+.submitBtn {
+  color: var(--v-gray-darken4) !important;
+}
+</style>

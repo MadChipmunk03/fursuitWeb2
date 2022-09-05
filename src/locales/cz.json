@@ -29,6 +29,11 @@
       "currencyCzk": "Kč",
       "total": "Celkem"
     },
-    "sendBtn": "Poslat odhad"
+    "sendBtn": "Odeslat poptávku"
+  },
+  "validations": {
+    "required": "pole je povinné",
+    "email": "email není platný",
+    "minmax": "rozmezí je"
   }
 }

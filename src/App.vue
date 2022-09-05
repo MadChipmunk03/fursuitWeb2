@@ -39,11 +39,4 @@ body {
     url('./fonts/MrDafoe/MrDafoe-Regular.ttf') format('truetype'),
     url('./fonts/MrDafoe/MrDafoe-Regular.svg#svgFontName') format('svg');
 }
-
-#style-1::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #555;
-}
 </style>

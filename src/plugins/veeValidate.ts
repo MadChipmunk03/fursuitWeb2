@@ -1,33 +1,21 @@
 import { extend } from 'vee-validate';
-import { required } from 'vee-validate/dist/rules';
+import { required, email } from 'vee-validate/dist/rules';
+import i18n from './i18n';
 
 extend('required', {
   ...required,
-  message: 'Pole je povinné',
+  message: String(i18n.t('validations.required')),
+});
+
+extend('email', {
+  ...email,
+  message: String(i18n.t('validations.email')),
 });
 
 extend('minmax', {
   validate(value, args: any) {
     return value <= Number(args.max) && value >= Number(args.min);
   },
-  message: 'Počet pracovních dní musí být v rozmezí od {min} do {max} (včetně)',
+  message: i18n.t('validations.minmax') + ' {min}-{max}',
   params: ['min', 'max'],
 });
-
-// extend('date', {
-//   validate(value, { format }: any) {
-//     return value && DateTime.fromFormat(value, format).isValid;
-//   },
-//   message: 'Datum musí být ve formátu {format}',
-//   params: ['format'],
-// });
-
-// extend('dateBefore', {
-//   validate(value, { target, format }: any) {
-//     const myDate = DateTime.fromFormat(value, format);
-//     const targetDate = DateTime.fromFormat(target, format);
-//     return myDate.startOf('day') <= targetDate.startOf('day');
-//   },
-//   message: 'Počáteční datum neodpovídá konečnému!',
-//   params: ['target', 'format'],
-// });

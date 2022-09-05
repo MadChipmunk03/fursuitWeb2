@@ -29,8 +29,11 @@
       "currencyCzk": "CZK",
       "total": "Total"
     },
-    "sendQuote": {
-      "sendBtn": "Send quote"
-    }
+    "sendBtn": "Send quote"
+  },
+  "validations": {
+    "required": "field is required",
+    "email": "email is not valid",
+    "minmax": "input range is"
   }
 }

@@ -9,27 +9,40 @@
     <v-row>
       <v-col cols="12" md="6">
         <v-card-title class="form-input-title">{{ $t('priceQuote.animal.furTitle') }}</v-card-title>
-        <v-text-field v-model="formVals.fur" type="number" solo />
+        <ValidationProvider name="fur" rules="minmax:1,8" v-slot="{ errors }">
+          <v-text-field v-model="formVals.fur" :error-messages="errors" type="number" solo />
+        </ValidationProvider>
       </v-col>
       <v-col cols="12" md="6">
         <v-card-title class="form-input-title">{{ $t('priceQuote.animal.fleeceTitle') }}</v-card-title>
-        <v-text-field v-model="formVals.fleece" type="number" solo />
+        <ValidationProvider name="fleece" rules="minmax:1,5" v-slot="{ errors }">
+          <v-text-field v-model="formVals.fleece" :error-messages="errors" type="number" solo />
+        </ValidationProvider>
       </v-col>
     </v-row>
 
     <v-card-title class="form-input-title">{{ $t('priceQuote.animal.notesTitle') }}</v-card-title>
-    <v-textarea v-mode="formVals.notes" :label="$t('priceQuote.animal.notesLabel')" solo />
+    <v-textarea v-model="formVals.notes" :label="$t('priceQuote.animal.notesLabel')" solo />
 
     <v-card-title class="form-input-title">Email</v-card-title>
-    <v-text-field :label="$t('priceQuote.animal.emailLabel')" solo />
+    <ValidationProvider name="email" rules="required|email" v-slot="{ errors }">
+      <v-text-field
+        v-model="formVals.email"
+        :error-messages="errors"
+        :label="$t('priceQuote.animal.emailLabel')"
+        solo
+      />
+    </ValidationProvider>
   </v-container>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import { ValidationProvider } from 'vee-validate';
 
 export default Vue.extend({
   name: 'AnimalForm',
+  components: { ValidationProvider },
   data() {
     return {
       message: 'AnimalForm works!',
@@ -82,17 +95,24 @@ export default Vue.extend({
         const currency = this.$t('priceQuote.priceQuote.currencyCzk');
 
         const formObj = {
-          tableHeaders: [
-            { text: 'Item', value: 'item' },
-            { text: 'Price', value: 'price' },
-          ],
           tableItems: [
             { item: `${this.$t('priceQuote.animal.suitTable')} (${suitVal})`, price: `${suitCost} ${currency}` },
             { item: `${this.$t('priceQuote.animal.furTable')} (${furVal})`, price: `${furCost} ${currency}` },
             { item: `${this.$t('priceQuote.animal.fleeceTable')} (${fleeceVal})`, price: `${fleeceCost} ${currency}` },
           ],
           totalCost: suitCost + furCost + fleeceCost,
-          rawVals: formVals,
+          emailVals: {
+            suit: suitVal,
+            suitCost: suitCost,
+            animal: formVals.animal.value,
+            fur: furVal,
+            furCost: furCost,
+            fleece: fleeceVal,
+            fleeceCost: fleeceCost,
+            notes: formVals.notes,
+            from: formVals.email,
+            totalCost: suitCost + furCost + fleeceCost,
+          },
         };
         this.$emit('form-obj', formObj);
       },

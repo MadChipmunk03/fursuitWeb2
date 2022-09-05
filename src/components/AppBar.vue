@@ -20,4 +20,8 @@ export default Vue.extend({
   font-family: 'MrDafoe', Helvetica, Arial;
   font-size: 60px;
 }
+
+.v-app-bar-title__content {
+  visibility: visible !important;
+}
 </style>
