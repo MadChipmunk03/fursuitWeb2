@@ -9,6 +9,7 @@
 
           <!-- Form -->
           <AnimalForm v-if="selectedForm === 'animal'" @form-obj="tableContent = $event" />
+          <ProtogenForm v-if="selectedForm === 'protogen'" @form-obj="tableContent = $event"/>
 
           <v-divider />
 
@@ -32,12 +33,13 @@ import emailjs from '@emailjs/browser';
 import Vue from 'vue';
 import FormSelect from '../components/PriceQuote/FormSelect.vue';
 import AnimalForm from '@/components/PriceQuote/AnimalForm.vue';
+import ProtogenForm from '@/components/PriceQuote/protogenForm.vue';
 import FormTable from '@/components/PriceQuote/FormTable.vue';
 import BForm from '../components/BForm.vue';
 
 export default Vue.extend({
   name: 'PriceQuoteView',
-  components: { FormSelect, AnimalForm, FormTable, BForm },
+  components: { FormSelect, AnimalForm, ProtogenForm, FormTable, BForm },
   data() {
     return {
       selectedForm: 'animal',

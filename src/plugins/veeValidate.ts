@@ -13,7 +13,7 @@ extend('email', {
 });
 
 extend('minmax', {
-  validate(value, args: any) {
+  validate(value: number, args: any) {
     return value <= Number(args.max) && value >= Number(args.min);
   },
   message: i18n.t('validations.minmax') + ' {min}-{max}',

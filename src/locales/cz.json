@@ -23,7 +23,15 @@
 
       "emailLabel": "jardanovak@seznam.cz"
     },
-    "protogen": {},
+    "protogen": {
+      "furTitle": "Kolik barev kožešin má vaše sona?",
+
+      "matrixColorTitle": "Jakou barvu by měly mít vaše LED matice?",
+      "matrixColorVals": ["Červenou", "Zelenou", "Modrou"],
+      
+      "numOfEarsTitle": "Kolik párů uší má mít protogen?",
+      "numOfEarsVals": ["Jeden", "Dva"]
+    },
     "priceQuote": {
       "title": "Cenový odhad: ",
       "currencyCzk": "Kč",

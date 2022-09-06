@@ -13,17 +13,25 @@
       "animalVals": ["Fox", "Wolf", "Cat", "Other"],
 
       "furTable": "Fur colors",
-      "furTitle": "How many colors of fur does your sona use?",
+      "furTitle": "How many colors of fur should your sona have?",
 
       "fleeceTable": "Fleece colors",
-      "fleeceTitle": "How many colors of fleece does your sona use?",
+      "fleeceTitle": "How many colors of fleece should your sona have?",
 
       "notesTitle": "Notes",
       "notesDesctiption": "e.g. link to pictures with draft",
 
       "emailLabel": "johnsmith@gmail.com"
     },
-    "protogen": {},
+    "protogen": {
+      "furTitle": "How many colors of fur should your sona have?",
+
+      "matrixColorTitle": "What color should your led matrix have?",
+      "matrixColorVals": ["Red", "Green", "Blue"],
+      
+      "numOfEarsTitle": "How many pairs of ears should your protogen have?",
+      "numOfEarsVals": ["One", "Two"]
+    },
     "priceQuote": {
       "title": "Price quote: ",
       "currencyCzk": "CZK",
