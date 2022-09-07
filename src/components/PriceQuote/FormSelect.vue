@@ -19,12 +19,15 @@ export default Vue.extend({
   name: 'FormSelect',
   data() {
     return {
-      selectedForm: 'animal',
+      selectedForm: 'protogen',
     };
   },
   watch: {
-    selectedForm(newVal): void {
-      this.$emit('selected-form', newVal);
+    selectedForm: {
+      handler(newVal): void {
+        this.$emit('selected-form', newVal);
+      },
+      immediate: true,
     },
   },
 });

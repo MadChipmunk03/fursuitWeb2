@@ -24,13 +24,31 @@
       "emailLabel": "jardanovak@seznam.cz"
     },
     "protogen": {
+      "defaultEquipment": "Do základní výbavy patří <b>větráček</b> na ventilování, <b>RGB dioda</b> na stav o aktuální emoci a <b>tlačítko</b> na přepínání emocí",
+      "protogenTable": "Základní cena protogena",
+
+      "furTable": "Barvy kožešin",
       "furTitle": "Kolik barev kožešin má vaše sona?",
 
       "matrixColorTitle": "Jakou barvu by měly mít vaše LED matice?",
       "matrixColorVals": ["Červenou", "Zelenou", "Modrou"],
-      
-      "numOfEarsTitle": "Kolik párů uší má mít protogen?",
-      "numOfEarsVals": ["Jeden", "Dva"]
+
+      "earsTable": "Počet párů uší",
+      "earsTitle": "Kolik párů uší má mít protogen?",
+      "earsVals": ["Jeden", "Dva"],
+
+      "hornsTable": "Rohy",
+      "hornsTitle": "Rohy",
+
+      "rgbRingsTable": "RGB kruhy",
+      "rgbRingsTitle": "RGB kruhy",
+
+      "wifiTable": "Wifi",
+      "wifiTitle": "Wifi",
+      "wifiSubtitle": "možnost ovládat emoce přez telefon",
+
+      "customEmotionTable": "Vlastní emoce",
+      "customEmotionTitle": "Vlastní emoce"
     },
     "priceQuote": {
       "title": "Cenový odhad: ",
@@ -38,6 +56,10 @@
       "total": "Celkem"
     },
     "sendBtn": "Odeslat poptávku"
+  },
+  "general": {
+    "yes": "Ano",
+    "no": "ne"
   },
   "validations": {
     "required": "pole je povinné",

@@ -1,30 +1,30 @@
 <template>
   <v-container>
-    <v-card-title class="form-input-title">{{ $t('priceQuote.animal.suitTitile') }}</v-card-title>
+    <v-card-title class="break-with-word">{{ $t('priceQuote.animal.suitTitile') }}</v-card-title>
     <v-select v-model="formVals.suit.value" :items="formVals.suit.values" solo />
 
-    <v-card-title class="form-input-title">{{ $t('priceQuote.animal.animalTitle') }}</v-card-title>
+    <v-card-title class="break-with-word">{{ $t('priceQuote.animal.animalTitle') }}</v-card-title>
     <v-select v-model="formVals.animal.value" :items="formVals.animal.values" solo />
 
     <v-row>
       <v-col cols="12" md="6">
-        <v-card-title class="form-input-title">{{ $t('priceQuote.animal.furTitle') }}</v-card-title>
+        <v-card-title class="break-with-word">{{ $t('priceQuote.animal.furTitle') }}</v-card-title>
         <ValidationProvider name="fur" rules="minmax:1,8" v-slot="{ errors }">
           <v-text-field v-model="formVals.fur" :error-messages="errors" type="number" solo />
         </ValidationProvider>
       </v-col>
       <v-col cols="12" md="6">
-        <v-card-title class="form-input-title">{{ $t('priceQuote.animal.fleeceTitle') }}</v-card-title>
+        <v-card-title class="break-with-word">{{ $t('priceQuote.animal.fleeceTitle') }}</v-card-title>
         <ValidationProvider name="fleece" rules="minmax:1,5" v-slot="{ errors }">
           <v-text-field v-model="formVals.fleece" :error-messages="errors" type="number" solo />
         </ValidationProvider>
       </v-col>
     </v-row>
 
-    <v-card-title class="form-input-title">{{ $t('priceQuote.animal.notesTitle') }}</v-card-title>
+    <v-card-title class="break-with-word">{{ $t('priceQuote.animal.notesTitle') }}</v-card-title>
     <v-textarea v-model="formVals.notes" :label="$t('priceQuote.animal.notesLabel')" solo />
 
-    <v-card-title class="form-input-title">Email</v-card-title>
+    <v-card-title class="break-with-word">Email</v-card-title>
     <ValidationProvider name="email" rules="required|email" v-slot="{ errors }">
       <v-text-field
         v-model="formVals.email"
@@ -124,7 +124,7 @@ export default Vue.extend({
 </script>
 
 <style scope lang="scss">
-.form-input-title {
+.break-with-word {
   word-break: break-word;
 }
 </style>

@@ -9,7 +9,7 @@
 
           <!-- Form -->
           <AnimalForm v-if="selectedForm === 'animal'" @form-obj="tableContent = $event" />
-          <ProtogenForm v-if="selectedForm === 'protogen'" @form-obj="tableContent = $event"/>
+          <ProtogenForm v-if="selectedForm === 'protogen'" @form-obj="tableContent = $event" />
 
           <v-divider />
 
@@ -42,15 +42,13 @@ export default Vue.extend({
   components: { FormSelect, AnimalForm, ProtogenForm, FormTable, BForm },
   data() {
     return {
-      selectedForm: 'animal',
+      selectedForm: '',
       tableContent: {} as any,
     };
   },
   methods: {
     sendForm() {
       emailjs.send('service_gmail_peta', 'template_bambi_animal', this.tableContent.emailVals, 'XOcIETAYuZScgoUa-');
-      console.log('☣', this.tableContent.emailVals);
-      console.log('sending form...');
     },
   },
 });
