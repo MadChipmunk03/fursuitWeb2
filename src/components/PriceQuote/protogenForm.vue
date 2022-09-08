@@ -15,9 +15,10 @@
       </v-col>
     </v-row>
 
-    <v-card-title class="break-with-word">{{ $t('priceQuote.protogen.matrixColorTitle') }}</v-card-title>
-    <v-select v-model="formVals.matrixColor.value" :items="formVals.matrixColor.values" solo />
+    <v-card-title class="break-with-word">{{ $t('priceQuote.protogen.matrixTitle') }}</v-card-title>
+    <v-select v-model="formVals.matrix.value" :items="formVals.matrix.values" solo />
 
+    <!-- list with checkboxes -->
     <v-container v-for="checkbox in checkboxes" :key="checkbox.title" class="pa-0">
       <v-row class="pa-0">
         <v-card-title>
@@ -32,6 +33,19 @@
         </v-card-subtitle>
       </v-row>
     </v-container>
+
+    <v-card-title class="break-with-word">{{ $t('priceQuote.protogen.notesTitle') }}</v-card-title>
+    <v-textarea v-model="formVals.notes" :label="$t('priceQuote.protogen.notesLabel')" solo />
+
+    <v-card-title class="break-with-word">Email</v-card-title>
+    <ValidationProvider name="email" rules="required|email" v-slot="{ errors }">
+      <v-text-field
+        v-model="formVals.email"
+        :error-messages="errors"
+        :label="$t('priceQuote.protogen.emailLabel')"
+        solo
+      />
+    </ValidationProvider>
   </v-container>
 </template>
 
@@ -47,13 +61,13 @@ export default Vue.extend({
       defaultEquipment: this.$t('priceQuote.protogen.defaultEquipment'),
       formVals: {
         fur: 4,
-        matrixColor: {
-          value: this.$t('priceQuote.protogen.matrixColorVals[0]'),
-          values: this.$t('priceQuote.protogen.matrixColorVals'),
-        },
         ears: {
           value: this.$t('priceQuote.protogen.earsVals[0]'),
           values: this.$t('priceQuote.protogen.earsVals'),
+        },
+        matrix: {
+          value: this.$t('priceQuote.protogen.matrixVals[0]'),
+          values: this.$t('priceQuote.protogen.matrixVals'),
         },
         horns: {
           title: this.$t('priceQuote.protogen.hornsTitle'),
@@ -72,6 +86,8 @@ export default Vue.extend({
           title: this.$t('priceQuote.protogen.customEmotionTitle'),
           value: false,
         },
+        notes: '',
+        email: '',
       },
     };
   },
@@ -92,6 +108,7 @@ export default Vue.extend({
         const rgbRingsCost = formVals.rgbRings.value ? 200 : 0;
         const wifiCost = formVals.wifi.value ? 0 : -1000;
         const customEmotionCost = formVals.customEmotion.value ? 500 : 0;
+        const totalCost = protogenCost + furCost + earsCost + hornsCost + rgbRingsCost + wifiCost + customEmotionCost;
 
         const currency = this.$t('priceQuote.priceQuote.currencyCzk');
 
@@ -114,8 +131,25 @@ export default Vue.extend({
               price: `${customEmotionCost} ${currency}`,
             },
           ],
-          totalCost: protogenCost + furCost + earsCost + hornsCost + rgbRingsCost + wifiCost + customEmotionCost,
-          emailVals: {},
+          totalCost: totalCost,
+          emailVals: {
+            protogenCost: protogenCost,
+            fur: furVal,
+            furCost: furCost,
+            ears: formVals.ears.value,
+            earsCost: earsCost,
+            matrix: formVals.matrix.value,
+            horns: hornsValStr,
+            hornsCost: hornsCost,
+            rgbRings: rgbRingsValStr,
+            rgbRingsCost: rgbRingsCost,
+            wifi: wifiValStr,
+            wifiCost: wifiCost,
+            customEmotion: customEmotionValStr,
+            customEmotionCost: customEmotionCost,
+            from: formVals.email,
+            totalCost: totalCost,
+          },
         };
         this.$emit('form-obj', formObj);
       },

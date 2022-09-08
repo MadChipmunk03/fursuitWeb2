@@ -48,7 +48,8 @@ export default Vue.extend({
   },
   methods: {
     sendForm() {
-      emailjs.send('service_gmail_peta', 'template_bambi_animal', this.tableContent.emailVals, 'XOcIETAYuZScgoUa-');
+      const emailTemplate = this.selectedForm === 'animal' ? "template_bambi_animal" : "template_bambi_protogen"
+      emailjs.send('service_gmail_peta', emailTemplate, this.tableContent.emailVals, 'XOcIETAYuZScgoUa-');
     },
   },
 });

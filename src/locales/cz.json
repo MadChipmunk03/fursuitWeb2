@@ -30,8 +30,8 @@
       "furTable": "Barvy kožešin",
       "furTitle": "Kolik barev kožešin má vaše sona?",
 
-      "matrixColorTitle": "Jakou barvu by měly mít vaše LED matice?",
-      "matrixColorVals": ["Červenou", "Zelenou", "Modrou"],
+      "matrixTitle": "Jakou barvu by měly mít vaše LED matice?",
+      "matrixVals": ["Červenou", "Zelenou", "Modrou"],
 
       "earsTable": "Počet párů uší",
       "earsTitle": "Kolik párů uší má mít protogen?",
@@ -48,7 +48,12 @@
       "wifiSubtitle": "možnost ovládat emoce přez telefon",
 
       "customEmotionTable": "Vlastní emoce",
-      "customEmotionTitle": "Vlastní emoce"
+      "customEmotionTitle": "Vlastní emoce",
+
+      "notesLabel": "např. odkaz na obrázky s návrhy",
+      "notesTitle": "Poznámky",
+
+      "emailLabel": "jardanovak@seznam.cz"
     },
     "priceQuote": {
       "title": "Cenový odhad: ",

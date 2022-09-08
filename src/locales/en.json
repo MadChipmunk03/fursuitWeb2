@@ -32,8 +32,8 @@
       "furTable": "Fur colors",
       "furTitle": "How many colors of fur should your sona have?",
 
-      "matrixColorTitle": "What color should your led matrix have?",
-      "matrixColorVals": ["Red", "Green", "Blue"],
+      "matrixTitle": "What color should your led matrix have?",
+      "matrixVals": ["Red", "Green", "Blue"],
 
       "earsTable": "Number of pairs of ears",
       "earsTitle": "How many pairs of ears should your protogen have?",
@@ -50,7 +50,12 @@
       "wifiSubtitle": "ability to control emotions with your phone",
 
       "customEmotionTable": "Custom emotion",
-      "customEmotionTitle": "Custom emotion"
+      "customEmotionTitle": "Custom emotion",
+
+      "notesTitle": "Notes",
+      "notesDesctiption": "e.g. link to pictures with draft",
+
+      "emailLabel": "johnsmith@gmail.com"
     },
     "priceQuote": {
       "title": "Price quote: ",

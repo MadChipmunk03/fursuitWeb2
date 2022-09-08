@@ -92,6 +92,7 @@ export default Vue.extend({
             break;
         }
 
+        const totalCost = suitCost + furCost + fleeceCost
         const currency = this.$t('priceQuote.priceQuote.currencyCzk');
 
         const formObj = {
@@ -100,7 +101,7 @@ export default Vue.extend({
             { item: `${this.$t('priceQuote.animal.furTable')} (${furVal})`, price: `${furCost} ${currency}` },
             { item: `${this.$t('priceQuote.animal.fleeceTable')} (${fleeceVal})`, price: `${fleeceCost} ${currency}` },
           ],
-          totalCost: suitCost + furCost + fleeceCost,
+          totalCost: totalCost,
           emailVals: {
             suit: suitVal,
             suitCost: suitCost,
@@ -111,7 +112,7 @@ export default Vue.extend({
             fleeceCost: fleeceCost,
             notes: formVals.notes,
             from: formVals.email,
-            totalCost: suitCost + furCost + fleeceCost,
+            totalCost: totalCost,
           },
         };
         this.$emit('form-obj', formObj);
