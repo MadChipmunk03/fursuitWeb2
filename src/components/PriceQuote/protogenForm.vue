@@ -19,7 +19,7 @@
     <v-select v-model="formVals.matrix.value" :items="formVals.matrix.values" solo />
 
     <!-- list with checkboxes -->
-    <v-container v-for="checkbox in checkboxes" :key="checkbox.title" class="pa-0">
+    <v-container v-for="checkbox in checkboxes" :key="checkbox.title" class="pt-0">
       <v-row class="pa-0">
         <v-card-title>
           {{ checkbox.title }}
@@ -27,7 +27,7 @@
         <v-spacer></v-spacer>
         <v-checkbox v-model="checkbox.value" />
       </v-row>
-      <v-row class="pa-0">
+      <v-row class="pt-0">
         <v-card-subtitle v-if="checkbox?.subtitle" class="break-with-word pt-0 mt-n3">
           ({{ checkbox.subtitle }})
         </v-card-subtitle>
@@ -147,6 +147,7 @@ export default Vue.extend({
             wifiCost: wifiCost,
             customEmotion: customEmotionValStr,
             customEmotionCost: customEmotionCost,
+            notes: formVals.notes,
             from: formVals.email,
             totalCost: totalCost,
           },
