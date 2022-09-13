@@ -12,7 +12,7 @@ export default new Vuetify({
         primary: colors.amber,
       },
       dark: {
-        primary: "#2A92AB",
+        primary: '#2A92AB',
       },
     },
   },

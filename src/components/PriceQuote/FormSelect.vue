@@ -19,7 +19,7 @@ export default Vue.extend({
   name: 'FormSelect',
   data() {
     return {
-      selectedForm: 'protogen',
+      selectedForm: 'animal',
     };
   },
   watch: {
@@ -38,13 +38,28 @@ export default Vue.extend({
 .theme--dark.v-btn--active::before {
   opacity: 0 !important;
 }
+
 .btnGrp {
   span {
     font-size: 20px;
     margin: 0px 5px;
   }
 }
+
 .active {
   background-color: var(--v-primary-base) !important;
+
+  i.v-icon {
+    animation: scale-animation 1s forwards alternate;
+  }
+}
+
+@keyframes scale-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1.25);
+  }
 }
 </style>

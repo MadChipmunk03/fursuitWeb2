@@ -19,10 +19,33 @@
     <v-select v-model="formVals.matrix.value" :items="formVals.matrix.values" solo />
 
     <!-- list with checkboxes -->
-    <v-container v-for="checkbox in checkboxes" :key="checkbox.title" class="pt-0">
+    <v-container v-for="(checkbox, ix) in checkboxes" :key="ix" class="pt-0">
       <v-row class="pa-0">
         <v-card-title>
           {{ checkbox.title }}
+
+          <v-tooltip v-if="checkbox?.preview" top>
+            <template v-slot:activator="{ on, attrs }">
+              <sup>
+                <v-icon color="grey darken-4" left size="20" v-bind="attrs" v-on="on"> mdi-information-variant </v-icon>
+              </sup>
+            </template>
+            <v-row class="py-5 px-0">
+              <v-col>
+                <v-img
+                  :src="require('@/assets/commission/' + checkbox.preview.img)"
+                  :alt="checkbox.preview.img"
+                  contain
+                  max-height="150"
+                  max-width="150"
+                ></v-img>
+              </v-col>
+              <v-col>
+                <h3>{{ checkbox.title }}</h3>
+                <p class="break-with-word preview-description">{{ checkbox.preview.description }}</p>
+              </v-col>
+            </v-row>
+          </v-tooltip>
         </v-card-title>
         <v-spacer></v-spacer>
         <v-checkbox v-model="checkbox.value" />
@@ -81,6 +104,10 @@ export default Vue.extend({
           title: this.$t('priceQuote.protogen.wifiTitle'),
           subtitle: this.$t('priceQuote.protogen.wifiSubtitle'),
           value: true,
+          preview: {
+            img: 'wifiPreview.png',
+            description: this.$t('priceQuote.protogen.wifiSubtitle'),
+          },
         },
         customEmotion: {
           title: this.$t('priceQuote.protogen.customEmotionTitle'),
@@ -169,5 +196,8 @@ export default Vue.extend({
 <style scope lang="scss">
 .break-with-word {
   word-break: break-word;
+}
+.preview-description {
+  width: 150px;
 }
 </style>

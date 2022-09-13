@@ -3,7 +3,7 @@
     <v-spacer />
     <v-col cols="12" md="6" class="pa-0">
       <BForm :handleSubmit="sendForm">
-        <v-card class="pa-8">
+        <v-card class="pa-8 mt-0">
           <!-- Select form -->
           <FormSelect @selected-form="selectedForm = $event" />
 
@@ -48,7 +48,7 @@ export default Vue.extend({
   },
   methods: {
     sendForm() {
-      const emailTemplate = this.selectedForm === 'animal' ? "template_bambi_animal" : "template_bambi_protogen"
+      const emailTemplate = this.selectedForm === 'animal' ? 'template_bambi_animal' : 'template_bambi_protogen';
       emailjs.send('service_gmail_peta', emailTemplate, this.tableContent.emailVals, 'XOcIETAYuZScgoUa-');
     },
   },
