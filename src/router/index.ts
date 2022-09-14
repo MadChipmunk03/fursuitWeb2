@@ -1,7 +1,9 @@
+import MerchView from '@/views/MerchView.vue';
+import SocialMediaView from '@/views/SocialMediaView.vue';
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
-import PriceQuoteView from "../views/PriceQuoteView.vue"
+import PriceQuoteView from '../views/PriceQuoteView.vue';
 
 Vue.use(VueRouter);
 
@@ -14,7 +16,7 @@ const routes: Array<RouteConfig> = [
   {
     path: '/merch',
     name: 'merch',
-    component: PriceQuoteView,
+    component: MerchView,
   },
   {
     path: '/commision',
@@ -24,8 +26,8 @@ const routes: Array<RouteConfig> = [
   {
     path: '/social-media',
     name: 'socialMedia',
-    component: PriceQuoteView,
-  }
+    component: SocialMediaView,
+  },
 ];
 
 const router = new VueRouter({
