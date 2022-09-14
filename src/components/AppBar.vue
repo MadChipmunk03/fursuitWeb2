@@ -10,7 +10,9 @@
 
       <template v-if="!isMobile" v-slot:extension>
         <v-tabs centered>
-          <v-tab v-for="(tab, ix) in tabs" :key="ix" active-class="active-tab">{{ tab.text }}</v-tab>
+          <v-tab v-for="(tab, ix) in tabs" :key="ix" @click="routeTo(tab.view)" active-class="active-tab">
+            {{ tab.text }}
+          </v-tab>
         </v-tabs>
       </template>
     </v-app-bar>
@@ -18,9 +20,11 @@
     <v-navigation-drawer v-model="drawer" absolute temporary app>
       <v-list nav>
         <v-list-item-group>
-          <v-list-item v-for="(tab, ix) in tabs" :key="ix">
-            <v-list-item-title>{{ tab.text }}</v-list-item-title>
-          </v-list-item>
+          <router-link v-for="(tab, ix) in tabs" :key="ix" :to="{ name: tab.view }">
+            <v-list-item>
+              <v-list-item-title>{{ tab.text }}</v-list-item-title>
+            </v-list-item>
+          </router-link>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -35,8 +39,18 @@ export default Vue.extend({
   data() {
     return {
       drawer: false,
-      tabs: [{ text: 'Home' }, { text: 'Merch' }, { text: 'Commision' }, { text: 'Social media' }],
+      tabs: [
+        { text: 'Home', view: 'home' },
+        { text: 'Merch', view: 'merch' },
+        { text: 'Commision', view: 'commision' },
+        { text: 'Social media', view: 'socialMedia' },
+      ],
     };
+  },
+  methods: {
+    routeTo(routeName: string) {
+      this.$router.push({ name: routeName });
+    },
   },
   computed: {
     isMobile() {

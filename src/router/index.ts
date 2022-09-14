@@ -12,8 +12,18 @@ const routes: Array<RouteConfig> = [
     component: HomeView,
   },
   {
-    path: '/form',
-    name: 'form',
+    path: '/merch',
+    name: 'merch',
+    component: PriceQuoteView,
+  },
+  {
+    path: '/commision',
+    name: 'commision',
+    component: PriceQuoteView,
+  },
+  {
+    path: '/social-media',
+    name: 'socialMedia',
     component: PriceQuoteView,
   }
 ];
