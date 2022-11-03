@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <!-- DESKTOP = tabs; MOBILE = drawer -->
-    <v-app-bar light color="primary" elevation="15" height="100" app>
+    <v-app-bar light color="primary" elevation="15" height="100" class="pb-0 mb-0" app>
       <v-app-bar-nav-icon v-if="isMobile" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer />
       <v-img src="@/assets/BambihoFanClub.png" alt="Bambi logo" max-height="80" max-width="80" class="mr-5"></v-img>
