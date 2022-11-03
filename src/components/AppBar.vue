@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container v-if="!isHomePage">
     <!-- DESKTOP = tabs; MOBILE = drawer -->
     <v-app-bar light color="primary" elevation="15" height="100" class="pb-0 mb-0" app>
       <v-app-bar-nav-icon v-if="isMobile" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -56,6 +56,9 @@ export default Vue.extend({
     isMobile() {
       const size = this.$vuetify.breakpoint.name;
       return ['xs', 'sm'].includes(size);
+    },
+    isHomePage() {
+      return this.$route.name === 'home';
     },
   },
 });
