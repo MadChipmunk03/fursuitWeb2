@@ -1,25 +1,21 @@
 <template>
-  <v-carousel cycle height="100vh" hide-delimiters :show-arrows="false" class="py-0 mt-0">
-    <v-carousel-item
-      eager
-      reverse-transition="fade-transition"
-      transition="fade-transition"
-      v-for="(item, i) in compImages"
-      :key="i"
-      :src="item.src"
-      ><!--  -->
-      <v-sheet class="coursel--item--sheet" height="100%">
-        <v-row class="fill-height mt-0" align="center" justify="center">
-          <v-sheet color="transparent">
-            <!-- <h2 class="text-h4 typed--text">{{ compText }}</h2> -->
-          </v-sheet>
-        </v-row>
-      </v-sheet>
-    </v-carousel-item>
-  </v-carousel>
+  <v-sheet>
+    <MainSlideShow />
+    <v-row class="mb-0 mx-0">
+      <v-spacer />
+      <v-col cols="12" md="6" class="px-0">
+        <v-card class="pa-4 mb-4"> 
+          <CommisionsAre />
+        </v-card>
+      </v-col>
+      <v-spacer />
+    </v-row>
+  </v-sheet>
 </template>
 
 <script lang="ts">
+import CommisionsAre from '@/components/Home/CommisionsAre.vue';
+import MainSlideShow from '@/components/Home/MainSlideShow.vue';
 import Vue from 'vue';
 
 enum ImgOrient {
@@ -35,107 +31,9 @@ interface Image {
 
 export default Vue.extend({
   name: 'HomeView',
-  data() {
-    return {
-      images: [
-        {
-          src: require('@/assets/homepage/proto_1.jpg'),
-          orientation: ImgOrient.HORIZONTAL,
-        },
-        {
-          src: require('@/assets/homepage/bambi_1.jpg'),
-          orientation: ImgOrient.BOTH,
-        },
-        {
-          src: require('@/assets/homepage/proto_5.jpg'),
-          orientation: ImgOrient.BOTH,
-        },
-        {
-          src: require('@/assets/homepage/bambi_8.jpg'),
-          orientation: ImgOrient.BOTH,
-        },
-        {
-          src: require('@/assets/homepage/proto_2.jpg'),
-          orientation: ImgOrient.HORIZONTAL,
-        },
-        {
-          src: require('@/assets/homepage/bambi_9.jpg'),
-          orientation: ImgOrient.HORIZONTAL,
-        },
-        {
-          src: require('@/assets/homepage/bambi_2.jpg'),
-          orientation: ImgOrient.BOTH,
-        },
-        {
-          src: require('@/assets/homepage/proto_3.jpg'),
-          orientation: ImgOrient.HORIZONTAL,
-        },
-        {
-          src: require('@/assets/homepage/bambi_10.jpg'),
-          orientation: ImgOrient.HORIZONTAL,
-        },
-        {
-          src: require('@/assets/homepage/bambi_3.jpg'),
-          orientation: ImgOrient.BOTH,
-        },
-        {
-          src: require('@/assets/homepage/proto_4.jpg'),
-          orientation: ImgOrient.BOTH,
-        },
-        {
-          src: require('@/assets/homepage/bambi_4.jpg'),
-          orientation: ImgOrient.HORIZONTAL,
-        },
-        {
-          src: require('@/assets/homepage/bambi_5.jpg'),
-          orientation: ImgOrient.HORIZONTAL,
-        },
-        {
-          src: require('@/assets/homepage/proto_6.jpg'),
-          orientation: ImgOrient.HORIZONTAL,
-        },
-        {
-          src: require('@/assets/homepage/bambi_6.jpg'),
-          orientation: ImgOrient.HORIZONTAL,
-        },
-        {
-          src: require('@/assets/homepage/proto_7.jpg'),
-          orientation: ImgOrient.BOTH,
-        },
-        {
-          src: require('@/assets/homepage/bambi_7.jpg'),
-          orientation: ImgOrient.HORIZONTAL,
-        },
-      ],
-      texts: ['UwU', '❤❤❤', 'Eeeeeeeeeeeeeeee!'],
-    };
-  },
-  computed: {
-    compImages(): Image[] {
-      if (this.$vuetify.breakpoint.name === 'xs')
-        return this.images.filter(
-          (img: any) => img.orientation === ImgOrient.VERTICAL || img.orientation === ImgOrient.BOTH
-        );
-      else
-        return this.images.filter(
-          (img: any) => img.orientation === ImgOrient.HORIZONTAL || img.orientation === ImgOrient.BOTH
-        );
-    },
-    compText(): string {
-      return this.texts[1];
-    },
-  },
+  components: { MainSlideShow, CommisionsAre },
 });
 </script>
 
 <style type="scss" scoped>
-.coursel--item--sheet {
-  background: no-repeat center center fixed !important;
-}
-
-.typed--text {
-  color: white;
-  text-decoration: underline solid var(--v-primaryInvert-base);
-  text-underline-offset: 8px;
-}
 </style>

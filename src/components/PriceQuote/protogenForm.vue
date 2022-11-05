@@ -23,7 +23,6 @@
       <v-row class="pa-0">
         <v-card-title>
           {{ checkbox.title }}
-
           <v-tooltip v-if="checkbox?.preview" top>
             <template v-slot:activator="{ on, attrs }">
               <sup>

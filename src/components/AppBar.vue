@@ -6,18 +6,12 @@
       <v-spacer />
       <v-img
         @click="routeTo('home')"
-        src="@/assets/BambihoFanClub.png"
+        src="@/assets/Logo__Liska_na_black_vedle_sebe_v1.png"
         alt="Bambi logo"
-        max-height="80"
-        max-width="80"
+        :max-height="logoDimensions.height"
+        :max-width="logoDimensions.width"
         class="mr-5"
       ></v-img>
-      <v-app-bar-title
-        v-if="$vuetify.breakpoint.name !== 'xs'"
-        class="text-h3 text-bold white--text"
-      >
-        Made by <span class="bambi--text">BAMBI</span>
-      </v-app-bar-title>
       <v-spacer />
 
       <template v-if="!isMobile" v-slot:extension>
@@ -59,9 +53,9 @@ export default Vue.extend({
       drawer: false,
       tabs: [
         { text: 'Home', view: 'home' },
+        { text: 'About us', view: 'aboutUs' },
         { text: 'Merch', view: 'merch' },
         { text: 'Commision', view: 'commision' },
-        { text: 'Social media', view: 'socialMedia' },
       ],
     };
   },
@@ -82,9 +76,6 @@ export default Vue.extend({
       if (this.isHomePage) return 'rgba(0, 0, 0, 0.5)';
       else return 'primary';
     },
-    bambiHeader() {
-      return {};
-    },
     tabClass() {
       if (this.isHomePage) {
         return {
@@ -97,15 +88,15 @@ export default Vue.extend({
       if (this.isHomePage) return 'white';
       return '';
     },
+    logoDimensions() {
+      if (['xl', 'lg'].includes(this.$vuetify.breakpoint.name)) return { width: 400, height: 80 };
+      return { width: 250, height: 70 };
+    },
   },
 });
 </script>
 
 <style scope lang="scss">
-.bambi--text {
-  color: var(--v-primaryInvert-base);
-}
-
 .active-tab {
   color: rgba(0, 0, 0, 0.87) !important;
   background-color: rgba(0, 0, 0, 0.1);

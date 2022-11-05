@@ -1,5 +1,5 @@
 import MerchView from '@/views/MerchView.vue';
-import SocialMediaView from '@/views/SocialMediaView.vue';
+import AboutUsView from '@/views/AboutUsView.vue';
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
@@ -24,9 +24,9 @@ const routes: Array<RouteConfig> = [
     component: PriceQuoteView,
   },
   {
-    path: '/social-media',
-    name: 'socialMedia',
-    component: SocialMediaView,
+    path: '/about-us',
+    name: 'aboutUs',
+    component: AboutUsView,
   },
 ];
 

@@ -2,6 +2,14 @@
   "preset": {
     "welcome": "Welcome to Vuetify"
   },
+  "home": {
+    "title": "Comissions are:",
+    "open": "Open",
+    "close": "Closed"
+  },
+  "aboutUs": {
+    "working": "We are currently working on it..."
+  },
   "priceQuote": {
     "notOpenForBusiness": "We do not accept comissions at the moment",
     "forms": ["Animal", "Protogen"],
@@ -19,8 +27,8 @@
       "fleeceTable": "Fleece colors",
       "fleeceTitle": "How many colors of fleece should your sona have?",
 
+      "notesLabel": "e.g. link to pictures with draft",
       "notesTitle": "Notes",
-      "notesDesctiption": "e.g. link to pictures with draft",
 
       "emailLabel": "johnsmith@gmail.com"
     },

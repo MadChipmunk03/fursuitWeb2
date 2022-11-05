@@ -2,6 +2,14 @@
   "preset": {
     "welcome": "Výtej ve Vuetify!"
   },
+  "home": {
+    "title": "Zakázky jsou:",
+    "open": "Otevřené",
+    "close": "Uzavřené"
+  },
+  "aboutUs": {
+    "working": "Pracujeme na tom..."
+  },
   "priceQuote": {
     "notOpenForBusiness": "Momentálně nepřijímáme žádné poptávky",
     "forms": ["Zvíře", "Protogen"],
