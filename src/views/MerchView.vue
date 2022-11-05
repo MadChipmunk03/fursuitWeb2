@@ -1,20 +1,16 @@
 <template>
-  <v-row>
+  <v-row class="fill-height mx-2">
     <v-spacer />
-    <v-col cols="12" md="6" class="pa-0">
-      <v-card class="pa-8 mt-0">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdjPJg_456KAAPMLp6VzshigdO33umgZM0hQzkWihqfuJUreg/viewform?embedded=true"
-          width="100%"
-          height="520"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-        >
-          Loading…
-        </iframe>
-      </v-card>
-    </v-col>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdjPJg_456KAAPMLp6VzshigdO33umgZM0hQzkWihqfuJUreg/viewform?embedded=true"
+      width="100%"
+      height="100%"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+    >
+      Loading…
+    </iframe>
     <v-spacer />
   </v-row>
 </template>

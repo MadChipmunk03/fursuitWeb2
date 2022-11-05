@@ -2,7 +2,7 @@
   <v-app>
     <AppBar />
 
-    <v-main>
+    <v-main :class="{'pa-0': $route.name === 'home'}">
       <router-view />
     </v-main>
   </v-app>
@@ -17,10 +17,10 @@ export default Vue.extend({
   components: { AppBar },
 
   // TO-DO uncomment for darkMode support
-  // beforeMount() {
-  //   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
-  //     this.$vuetify.theme.dark = true;
-  // }
+  beforeMount() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      this.$vuetify.theme.dark = true;
+  }
 });
 </script>
 
@@ -31,12 +31,12 @@ html {
 body {
   min-height: 100vh;
 }
-@font-face {
+/* @font-face {
   font-family: 'MrDafoe';
   src: local('MrDafoe'), url('./fonts/MrDafoe/MrDafoe-Regular.eot?#iefix') format('embedded-opentype'),
     url('./fonts/MrDafoe/MrDafoe-Regular.woff2') format('woff2'),
     url('./fonts/MrDafoe/MrDafoe-Regular.woff') format('woff'),
     url('./fonts/MrDafoe/MrDafoe-Regular.ttf') format('truetype'),
     url('./fonts/MrDafoe/MrDafoe-Regular.svg#svgFontName') format('svg');
-}
+} */
 </style>

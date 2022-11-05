@@ -3,6 +3,7 @@
     "welcome": "Výtej ve Vuetify!"
   },
   "priceQuote": {
+    "notOpenForBusiness": "Momentálně nepřijímáme žádné poptávky",
     "forms": ["Zvíře", "Protogen"],
     "animal": {
       "suitTable": "Základí cena suitu",

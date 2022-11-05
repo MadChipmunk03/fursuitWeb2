@@ -10,10 +10,13 @@ export default new Vuetify({
     themes: {
       light: {
         primary: colors.amber,
+        primaryInvert: '#2A92AB',
       },
       dark: {
         primary: '#2A92AB',
+        primaryInvert: colors.amber,
       },
+      
     },
   },
 });

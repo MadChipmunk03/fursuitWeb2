@@ -1,9 +1,12 @@
 <template>
-  <v-row>
+  <v-row class="pb-8">
     <v-spacer />
     <v-col cols="12" md="6" class="pa-0">
       <BForm :handleSubmit="sendForm">
         <v-card class="pa-8 mt-0">
+          <!-- Slide show -->
+          <slideShow />
+
           <!-- Select form -->
           <FormSelect @selected-form="selectedForm = $event" />
 
@@ -19,7 +22,9 @@
           <v-divider />
 
           <!-- Send -->
-          <v-btn block class="submitBtn" color="primary" type="submit">{{ $t('priceQuote.sendBtn') }}</v-btn>
+          <v-btn block class="submitBtn" color="primary" :disabled="!openForBusiness" type="submit">{{
+            $t('priceQuote.sendBtn')
+          }}</v-btn>
         </v-card>
       </BForm>
     </v-col>
@@ -36,14 +41,16 @@ import AnimalForm from '@/components/PriceQuote/AnimalForm.vue';
 import ProtogenForm from '@/components/PriceQuote/protogenForm.vue';
 import FormTable from '@/components/PriceQuote/FormTable.vue';
 import BForm from '../components/BForm.vue';
+import SlideShow from '@/components/PriceQuote/SlideShow.vue';
 
 export default Vue.extend({
   name: 'PriceQuoteView',
-  components: { FormSelect, AnimalForm, ProtogenForm, FormTable, BForm },
+  components: { FormSelect, AnimalForm, ProtogenForm, FormTable, BForm, SlideShow },
   data() {
     return {
       selectedForm: '',
       tableContent: {} as any,
+      openForBusiness: false as boolean,
     };
   },
   methods: {
@@ -52,6 +59,9 @@ export default Vue.extend({
       emailjs.send('service_gmail_peta', emailTemplate, this.tableContent.emailVals, 'XOcIETAYuZScgoUa-');
     },
   },
+  // mounted() {
+  //   if (!this.openForBusiness) alert(this.$t('priceQuote.notOpenForBusiness'));
+  // },
 });
 </script>
 

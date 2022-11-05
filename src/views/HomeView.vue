@@ -1,6 +1,7 @@
 <template>
   <v-carousel cycle height="100vh" hide-delimiters :show-arrows="false" class="py-0 mt-0">
     <v-carousel-item
+      eager
       reverse-transition="fade-transition"
       transition="fade-transition"
       v-for="(item, i) in compImages"
@@ -9,8 +10,9 @@
       ><!--  -->
       <v-sheet class="coursel--item--sheet" height="100%">
         <v-row class="fill-height mt-0" align="center" justify="center">
-          <p class="text-h2 text-bold white--text">Made by <span class="primary--text">BAMBI</span></p>
-          <p class="text-h4">{{ compText }}</p>
+          <v-sheet color="transparent">
+            <!-- <h2 class="text-h4 typed--text">{{ compText }}</h2> -->
+          </v-sheet>
         </v-row>
       </v-sheet>
     </v-carousel-item>
@@ -105,11 +107,11 @@ export default Vue.extend({
           orientation: ImgOrient.HORIZONTAL,
         },
       ],
-      texts: ['UwU', '❤❤❤'],
+      texts: ['UwU', '❤❤❤', 'Eeeeeeeeeeeeeeee!'],
     };
   },
   computed: {
-    compImages(): any {
+    compImages(): Image[] {
       if (this.$vuetify.breakpoint.name === 'xs')
         return this.images.filter(
           (img: any) => img.orientation === ImgOrient.VERTICAL || img.orientation === ImgOrient.BOTH
@@ -129,5 +131,11 @@ export default Vue.extend({
 <style type="scss" scoped>
 .coursel--item--sheet {
   background: no-repeat center center fixed !important;
+}
+
+.typed--text {
+  color: white;
+  text-decoration: underline solid var(--v-primaryInvert-base);
+  text-underline-offset: 8px;
 }
 </style>

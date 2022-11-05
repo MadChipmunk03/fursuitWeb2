@@ -3,6 +3,7 @@
     "welcome": "Welcome to Vuetify"
   },
   "priceQuote": {
+    "notOpenForBusiness": "We do not accept comissions at the moment",
     "forms": ["Animal", "Protogen"],
     "animal": {
       "suitTable": "Suit price base",

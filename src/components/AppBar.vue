@@ -1,23 +1,41 @@
 <template>
-  <v-container v-if="!isHomePage">
+  <v-container :class="{ 'py-0': isHomePage }">
     <!-- DESKTOP = tabs; MOBILE = drawer -->
-    <v-app-bar light color="primary" elevation="15" height="100" class="pb-0 mb-0" app>
-      <v-app-bar-nav-icon v-if="isMobile" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+    <v-app-bar light :color="appBarColor" elevation="15" height="100" class="pb-0 mb-0" app>
+      <v-app-bar-nav-icon v-if="isMobile" @click.stop="drawer = !drawer" :color="navIconColor"></v-app-bar-nav-icon>
       <v-spacer />
-      <v-img src="@/assets/BambihoFanClub.png" alt="Bambi logo" max-height="80" max-width="80" class="mr-5"></v-img>
-      <v-app-bar-title v-if="$vuetify.breakpoint.name !== 'xs'" class="bambiHeader">Bambilijáš</v-app-bar-title>
+      <v-img
+        @click="routeTo('home')"
+        src="@/assets/BambihoFanClub.png"
+        alt="Bambi logo"
+        max-height="80"
+        max-width="80"
+        class="mr-5"
+      ></v-img>
+      <v-app-bar-title
+        v-if="$vuetify.breakpoint.name !== 'xs'"
+        class="text-h3 text-bold white--text"
+      >
+        Made by <span class="bambi--text">BAMBI</span>
+      </v-app-bar-title>
       <v-spacer />
 
       <template v-if="!isMobile" v-slot:extension>
         <v-tabs centered>
-          <v-tab v-for="(tab, ix) in tabs" :key="ix" @click="routeTo(tab.view)" active-class="active-tab">
+          <v-tab
+            v-for="(tab, ix) in tabs"
+            :key="ix"
+            @click="routeTo(tab.view)"
+            :style="tabClass"
+            :active-class="isHomePage ? '' : 'active-tab'"
+          >
             {{ tab.text }}
           </v-tab>
         </v-tabs>
       </template>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" absolute temporary app>
+    <v-navigation-drawer v-model="drawer" temporary app>
       <v-list nav>
         <v-list-item-group>
           <router-link v-for="(tab, ix) in tabs" :key="ix" :to="{ name: tab.view }">
@@ -60,18 +78,32 @@ export default Vue.extend({
     isHomePage() {
       return this.$route.name === 'home';
     },
+    appBarColor() {
+      if (this.isHomePage) return 'rgba(0, 0, 0, 0.5)';
+      else return 'primary';
+    },
+    bambiHeader() {
+      return {};
+    },
+    tabClass() {
+      if (this.isHomePage) {
+        return {
+          color: 'white',
+        };
+      }
+      return {};
+    },
+    navIconColor() {
+      if (this.isHomePage) return 'white';
+      return '';
+    },
   },
 });
 </script>
 
 <style scope lang="scss">
-.bambiHeader {
-  font-family: 'MrDafoe', Helvetica, Arial;
-  font-size: 60px;
-
-  .v-app-bar-title__content {
-    visibility: visible !important;
-  }
+.bambi--text {
+  color: var(--v-primaryInvert-base);
 }
 
 .active-tab {

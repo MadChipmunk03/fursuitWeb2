@@ -6,7 +6,7 @@ import en from '@/locales/en.json';
 Vue.use(VueI18n);
 
 export default new VueI18n({
-  locale: 'cz', //TO-DO navigator.language
+  locale: navigator.language, //TO-DO navigator.language
   fallbackLocale: 'en',
   messages: { cz, en },
 });
