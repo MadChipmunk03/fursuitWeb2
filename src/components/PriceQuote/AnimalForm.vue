@@ -21,11 +21,11 @@
       </v-col>
     </v-row>
 
-    <v-card-title class="break-with-word">{{ $t('priceQuote.animal.notesTitle') }}</v-card-title>
-    <v-textarea v-model="formVals.notes" :label="$t('priceQuote.animal.notesLabel')" solo />
+    <v-card-title v-if="sendMail" class="break-with-word">{{ $t('priceQuote.animal.notesTitle') }}</v-card-title>
+    <v-textarea v-if="sendMail" v-model="formVals.notes" :label="$t('priceQuote.animal.notesLabel')" solo />
 
-    <v-card-title class="break-with-word">Email</v-card-title>
-    <ValidationProvider name="email" rules="required|email" v-slot="{ errors }">
+    <v-card-title v-if="sendMail" class="break-with-word">Email</v-card-title>
+    <ValidationProvider v-if="sendMail" name="email" rules="required|email" v-slot="{ errors }">
       <v-text-field
         v-model="formVals.email"
         :error-messages="errors"
@@ -38,6 +38,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import axios from 'axios';
 import { ValidationProvider } from 'vee-validate';
 
 export default Vue.extend({
@@ -45,7 +46,7 @@ export default Vue.extend({
   components: { ValidationProvider },
   data() {
     return {
-      message: 'AnimalForm works!',
+      sendMail: false,
       formVals: {
         suit: {
           value: this.$t('priceQuote.animal.suitVals[0]'),
@@ -92,7 +93,7 @@ export default Vue.extend({
             break;
         }
 
-        const totalCost = suitCost + furCost + fleeceCost
+        const totalCost = suitCost + furCost + fleeceCost;
         const currency = this.$t('priceQuote.priceQuote.currencyCzk');
 
         const formObj = {
@@ -120,6 +121,14 @@ export default Vue.extend({
       immediate: true,
       deep: true,
     },
+  },
+  created() {
+    axios
+      .get('config.json')
+      .then(res => {
+        this.sendMail = res.data.sendMail;
+      })
+      .catch(err => console.log(err));
   },
 });
 </script>

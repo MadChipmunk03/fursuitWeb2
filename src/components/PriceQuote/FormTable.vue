@@ -28,7 +28,6 @@ export default Vue.extend({
   },
   data() {
     return {
-      message: 'FormTable works!',
       tableHeaders: [
         { text: 'Item', value: 'item' },
         { text: 'Price', value: 'price', align: 'right' },

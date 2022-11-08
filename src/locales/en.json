@@ -2,10 +2,22 @@
   "preset": {
     "welcome": "Welcome to Vuetify"
   },
+  "appBarTabs": ["Home", "Merch", "Calculator", "Comissions", "About us"],
   "home": {
-    "title": "Comissions are:",
-    "open": "Open",
-    "close": "Closed"
+    "comissionsAre": {
+      "title": "Zakázky jsou:",
+      "open": "Otevřené",
+      "close": "Uzavřené"
+    },
+    "latestComissions": {
+      "types": {
+        "fox": "Fox",
+        "wolf": "Wolf",
+        "cat": "Cat",
+        "other": "Other",
+        "protogen": "Protogen"
+      }
+    }
   },
   "aboutUs": {
     "working": "We are currently working on it..."

@@ -2,10 +2,22 @@
   "preset": {
     "welcome": "Výtej ve Vuetify!"
   },
+  "appBarTabs": ["Domů", "Merch", "Kalkulačka", "Zakázky", "O nás"],
   "home": {
-    "title": "Zakázky jsou:",
-    "open": "Otevřené",
-    "close": "Uzavřené"
+    "comissionsAre": {
+      "title": "Zakázky jsou:",
+      "open": "Otevřené",
+      "close": "Uzavřené"
+    },
+    "latestComissions": {
+      "types": {
+        "fox": "Liška",
+        "wolf": "Vlk",
+        "cat": "Kočka",
+        "other": "Jiné",
+        "protogen": "Protogen"
+      }
+    }
   },
   "aboutUs": {
     "working": "Pracujeme na tom..."

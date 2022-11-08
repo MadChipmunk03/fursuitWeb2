@@ -56,11 +56,11 @@
       </v-row>
     </v-container>
 
-    <v-card-title class="break-with-word">{{ $t('priceQuote.protogen.notesTitle') }}</v-card-title>
-    <v-textarea v-model="formVals.notes" :label="$t('priceQuote.protogen.notesLabel')" solo />
+    <v-card-title v-if="sendMail" class="break-with-word">{{ $t('priceQuote.protogen.notesTitle') }}</v-card-title>
+    <v-textarea v-if="sendMail" v-model="formVals.notes" :label="$t('priceQuote.protogen.notesLabel')" solo />
 
-    <v-card-title class="break-with-word">Email</v-card-title>
-    <ValidationProvider name="email" rules="required|email" v-slot="{ errors }">
+    <v-card-title v-if="sendMail" class="break-with-word">Email</v-card-title>
+    <ValidationProvider v-if="sendMail" name="email" rules="required|email" v-slot="{ errors }">
       <v-text-field
         v-model="formVals.email"
         :error-messages="errors"
@@ -73,6 +73,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import axios from 'axios';
 import { ValidationProvider } from 'vee-validate';
 
 export default Vue.extend({
@@ -80,6 +81,7 @@ export default Vue.extend({
   components: { ValidationProvider },
   data() {
     return {
+      sendMail: false,
       defaultEquipment: this.$t('priceQuote.protogen.defaultEquipment'),
       formVals: {
         fur: 4,
@@ -188,6 +190,14 @@ export default Vue.extend({
     checkboxes(): Array<any> {
       return (({ horns, rgbRings, wifi, customEmotion }) => [horns, rgbRings, wifi, customEmotion])(this.formVals);
     },
+  },
+  created() {
+    axios
+      .get('config.json')
+      .then(res => {
+        this.sendMail = res.data.sendMail;
+      })
+      .catch(err => console.log(err));
   },
 });
 </script>

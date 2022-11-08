@@ -16,11 +16,6 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'AboutUsView',
-  data() {
-    return {
-      message: 'AboutUsView works!',
-    };
-  },
 });
 </script>
 

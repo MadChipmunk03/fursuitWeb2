@@ -20,11 +20,6 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'MerchView',
-  data() {
-    return {
-      message: 'MerchView works!',
-    };
-  },
 });
 </script>
 

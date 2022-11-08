@@ -52,10 +52,11 @@ export default Vue.extend({
     return {
       drawer: false,
       tabs: [
-        { text: 'Home', view: 'home' },
-        { text: 'About us', view: 'aboutUs' },
-        { text: 'Merch', view: 'merch' },
-        { text: 'Commision', view: 'commision' },
+        { text: this.$t('appBarTabs[0]'), view: 'home' },
+        { text: this.$t('appBarTabs[1]'), view: 'merch' },
+        { text: this.$t('appBarTabs[2]'), view: 'calculator' },
+        { text: this.$t('appBarTabs[3]'), view: 'comissions' },
+        { text: this.$t('appBarTabs[4]'), view: 'aboutUs' },
       ],
     };
   },

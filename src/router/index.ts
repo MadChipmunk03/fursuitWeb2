@@ -4,6 +4,7 @@ import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import PriceQuoteView from '../views/PriceQuoteView.vue';
+import ComissionsView from '@/views/ComissionsView.vue';
 
 Vue.use(VueRouter);
 
@@ -19,9 +20,14 @@ const routes: Array<RouteConfig> = [
     component: MerchView,
   },
   {
-    path: '/commision',
-    name: 'commision',
+    path: '/calculator',
+    name: 'calculator',
     component: PriceQuoteView,
+  },
+  {
+    path: '/comissions',
+    name: 'comissions',
+    component: ComissionsView,
   },
   {
     path: '/about-us',

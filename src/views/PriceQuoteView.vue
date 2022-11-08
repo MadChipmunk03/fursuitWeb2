@@ -1,10 +1,9 @@
 <template>
   <v-row class="mb-0">
-    <v-spacer/>
+    <v-spacer />
     <v-col cols="12" md="6" class="pa-0">
       <BForm :handleSubmit="sendForm">
         <v-card class="pa-8 mt-0 mb-4">
-
           <!-- Select form -->
           <FormSelect @selected-form="selectedForm = $event" />
 
@@ -17,21 +16,22 @@
           <!-- Price quote -->
           <FormTable :tableContent="tableContent" />
 
-          <v-divider />
+          <v-divider v-if="sendMail" />
 
           <!-- Send -->
-          <v-btn block class="submitBtn" color="primary" :disabled="!openForBusiness" type="submit">{{
+          <v-btn v-if="sendMail" block class="submitBtn" color="primary" :disabled="!commisionsAreOpen" type="submit">{{
             $t('priceQuote.sendBtn')
           }}</v-btn>
         </v-card>
       </BForm>
     </v-col>
-    <v-spacer/>
+    <v-spacer />
   </v-row>
 </template>
 
 <script lang="ts">
 import emailjs from '@emailjs/browser';
+import axios from 'axios';
 
 import Vue from 'vue';
 import FormSelect from '../components/PriceQuote/FormSelect.vue';
@@ -45,9 +45,10 @@ export default Vue.extend({
   components: { FormSelect, AnimalForm, ProtogenForm, FormTable, BForm },
   data() {
     return {
+      sendMail: false,
       selectedForm: '',
       tableContent: {} as any,
-      openForBusiness: false as boolean,
+      commisionsAreOpen: false as boolean,
     };
   },
   methods: {
@@ -56,9 +57,15 @@ export default Vue.extend({
       emailjs.send('service_gmail_peta', emailTemplate, this.tableContent.emailVals, 'XOcIETAYuZScgoUa-');
     },
   },
-  // mounted() {
-  //   if (!this.openForBusiness) alert(this.$t('priceQuote.notOpenForBusiness'));
-  // },
+  created() {
+    axios
+      .get('config.json')
+      .then(res => {
+        this.commisionsAreOpen = res.data.commisionsAreOpen;
+        this.sendMail = res.data.sendMail;
+      })
+      .catch(err => console.log(err));
+  },
 });
 </script>
 
