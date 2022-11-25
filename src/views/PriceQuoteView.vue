@@ -1,5 +1,5 @@
 <template>
-  <v-row class="mb-0">
+  <v-row class="mb-0 mx-0">
     <v-spacer />
     <v-col cols="12" md="6" class="pa-0">
       <BForm :handleSubmit="sendForm">

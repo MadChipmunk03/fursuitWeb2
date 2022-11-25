@@ -12,7 +12,7 @@
           ><p class="pa-4">{{ comission.desctiption }}</p>
         </v-col>
         <v-col cols="12" sm="6">
-          <v-img :src="comission.src" contain class="fill-height"></v-img>
+          <v-img :src="comission.src" :lazy-src="comission.lazySrc" contain class="fill-height"></v-img>
         </v-col>
       </v-row>
     </div>
@@ -25,6 +25,7 @@ import axios from 'axios';
 
 interface comission {
   src: string;
+  lazySrc: string;
   title: string;
   type: string;
   desctiption: string;
