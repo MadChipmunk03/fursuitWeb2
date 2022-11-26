@@ -1,8 +1,8 @@
 <template>
   <v-container>
-    <div v-for="(comission, ix) in comissions" :key="ix" :id="comission.title">
+    <div v-for="(comission, ix) in comissions" :key="ix">
       <v-divider v-if="ix !== 0" class="my-4" />
-      <v-sheet color="primary" class="d-flex">
+      <v-sheet color="primary" class="d-flex" :id="comission.title">
         <h1 class="mx-4">{{ comission.title }}</h1>
         <v-spacer />
         <h2 class="mx-4 mt-2">{{ $t('home.latestComissions.types.' + comission.type) }}</h2>

@@ -2,7 +2,13 @@
   "preset": {
     "welcome": "Výtej ve Vuetify!"
   },
-  "appBarTabs": ["Domů", "Merch", "Kalkulačka", "Zakázky", "O nás"],
+  "appBar": {
+    "tabs": ["Domů", "Merch", "Kalkulačka", "Zakázky", "O nás"],
+    "themeTitle": "Motiv",
+    "themes": ["Auto", "Světlý", "Tmavý"],
+    "langTitle": "Jazyk",
+    "langs": ["Auto", "Čeština", "Angličtina"]
+  },
   "home": {
     "comissionsAre": {
       "title": "Zakázky jsou:",

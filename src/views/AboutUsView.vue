@@ -3,8 +3,8 @@
     <v-spacer />
     <v-col cols="12" md="6" class="pa-0">
       <v-card class="pa-8 mt-0 mb-4">
-        <v-card-title>{{ $t('aboutUs.header') }}</v-card-title>
-        <v-card-text>{{ $t('aboutUs.text') }}</v-card-text>
+        <h2 class="mb-4">{{ $t('aboutUs.header') }}</h2>
+        <p>{{ $t('aboutUs.text') }}</p>
       </v-card>
     </v-col>
     <v-spacer />

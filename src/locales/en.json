@@ -2,12 +2,18 @@
   "preset": {
     "welcome": "Welcome to Vuetify"
   },
-  "appBarTabs": ["Home", "Merch", "Calculator", "Comissions", "About us"],
+  "appBar": {
+    "tabs": ["Home", "Merch", "Calculator", "Comissions", "About us"],
+    "themeTitle": "Theme",
+    "themes": ["Auto", "Light", "Dark"],
+    "langTitle": "Language",
+    "langs": ["Auto", "Czech", "English"]
+  },
   "home": {
     "comissionsAre": {
-      "title": "Zakázky jsou:",
-      "open": "Otevřené",
-      "close": "Uzavřené"
+      "title": "Comissions are:",
+      "open": "Open",
+      "close": "Close"
     },
     "latestComissions": {
       "types": {
