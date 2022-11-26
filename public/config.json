@@ -15,7 +15,18 @@
       "lazySrc": "",
       "title": "Phirst",
       "type": "protogen",
-      "desctiption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit."
+      "listCs": [
+        { "content": "Druh", "value": "ocas" },
+        { "content": "Majitel", "value": "SuperMajitel" },
+        { "content": "Barvy", "value": "bílá, červená, hnědá" },
+        { "content": "Vyrobeno", "value": "5. března 2037" }
+      ],
+      "listEn": [
+        { "content": "Type", "value": "tail" },
+        { "content": "Owner", "value": "SuperMajitel" },
+        { "content": "Colors", "value": "white, black, brown" },
+        { "content": "Made", "value": "March 6th 2037" }
+      ]
     }
   ]
 }

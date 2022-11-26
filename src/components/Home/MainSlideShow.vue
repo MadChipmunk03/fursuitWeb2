@@ -131,6 +131,7 @@ export default Vue.extend({
 
 .typewriter--cursor {
   opacity: 1;
+  color: white;
   animation: flickerAnimation 0.75s infinite;
 }
 

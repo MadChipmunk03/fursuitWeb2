@@ -8,8 +8,13 @@
         <h2 class="mx-4 mt-2">{{ $t('home.latestComissions.types.' + comission.type) }}</h2>
       </v-sheet>
       <v-row>
-        <v-col cols="12" sm="6" class="text-left"
-          ><p class="pa-4">{{ comission.desctiption }}</p>
+        <v-col cols="12" sm="6" class="text-left">
+          <p v-if="comission.desctiption" class="pa-4">{{ comission.desctiption }}</p>
+          <ul v-if="comission.list" class="pa-4">
+            <li class="py-1" v-for="(listItem, ix) in comission.list" :key="ix">
+              {{ listItem.content }}: {{ listItem.value }}
+            </li>
+          </ul>
         </v-col>
         <v-col cols="12" sm="6">
           <v-img :src="comission.src" :lazy-src="comission.lazySrc" contain class="fill-height"></v-img>
@@ -23,12 +28,20 @@
 import Vue from 'vue';
 import axios from 'axios';
 
+interface desctiptionList {
+  content: string;
+  value: string;
+}
+
 interface comission {
   src: string;
   lazySrc: string;
   title: string;
   type: string;
   desctiption: string;
+  list: desctiptionList[];
+  listEn: desctiptionList[];
+  listCs: desctiptionList[];
 }
 
 export default Vue.extend({
@@ -42,7 +55,10 @@ export default Vue.extend({
   created() {
     axios
       .get('config.json')
-      .then(res => (this.comissions = res.data.comissions))
+      .then(res => {
+        this.comissions = res.data.comissions;
+        this.comissions.forEach(com => (com.list = this.$i18n.locale === 'en' ? com.listEn : com.listCs));
+      })
       .catch(err => console.log(err));
   },
 });

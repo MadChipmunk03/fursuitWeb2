@@ -4,6 +4,7 @@
   },
   "appBar": {
     "tabs": ["Home", "Merch", "Calculator", "Comissions", "About us"],
+    "nav": "Navigation",
     "themeTitle": "Theme",
     "themes": ["Auto", "Light", "Dark"],
     "langTitle": "Language",

@@ -4,6 +4,7 @@
   },
   "appBar": {
     "tabs": ["Domů", "Merch", "Kalkulačka", "Zakázky", "O nás"],
+    "nav": "Navigace",
     "themeTitle": "Motiv",
     "themes": ["Auto", "Světlý", "Tmavý"],
     "langTitle": "Jazyk",

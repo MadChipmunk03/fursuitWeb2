@@ -11,7 +11,7 @@
         </v-sheet>
       </v-col>
       <v-col v-if="ix % 2 === 0 || $vuetify.breakpoint.name === 'xs'" cols="12" sm="6" class="pa-0">
-        <v-img :src="comission.src" contain></v-img>
+        <v-img contain :src="comission.src"></v-img>
       </v-col>
     </v-row>
   </div>

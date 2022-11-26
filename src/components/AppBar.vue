@@ -5,23 +5,15 @@
       <v-app-bar-nav-icon v-if="isMobile" @click.stop="drawer = !drawer" :color="navIconColor"></v-app-bar-nav-icon>
       <v-spacer />
       <v-img
+        class="float-center"
         @click="routeTo('home')"
-        src="@/assets/Logo__Liska_na_black_vedle_sebe_v1.png"
+        src="@/assets/MainLogoBambi.png"
         alt="Bambi logo"
         :max-height="logoDimensions.height"
         :max-width="logoDimensions.width"
-        class="mr-5"
       ></v-img>
       <v-spacer />
-
-      <v-menu v-if="!isMobile" :close-on-content-click="false" offset-x>
-        <template v-slot:activator="{ on, attrs }">
-          <v-icon :color="navIconColor" class="mr-4" v-bind="attrs" v-on="on"> mdi-cog </v-icon>
-        </template>
-        <v-card class="pa-4">
-          <UserSettings />
-        </v-card>
-      </v-menu>
+      <UserSettings v-if="!isMobile" />
 
       <template v-if="!isMobile" v-slot:extension>
         <v-tabs centered>
@@ -39,6 +31,8 @@
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" temporary app>
+      <h2 class="pa-4">{{ $t('appBar.nav') }}</h2>
+      <v-divider />
       <v-list nav>
         <v-list-item-group>
           <router-link v-for="(tab, ix) in tabs" :key="ix" :to="{ name: tab.view }">
@@ -50,7 +44,8 @@
       </v-list>
 
       <template v-slot:append>
-        <UserSettings />
+        <v-divider />
+        <UserSettings class="pt-4" />
       </template>
     </v-navigation-drawer>
   </v-container>

@@ -36,7 +36,7 @@ import axios from 'axios';
 import Vue from 'vue';
 import FormSelect from '../components/PriceQuote/FormSelect.vue';
 import AnimalForm from '@/components/PriceQuote/AnimalForm.vue';
-import ProtogenForm from '@/components/PriceQuote/ProtogenForm.vue';
+import ProtogenForm from '@/components/PriceQuote/protogenForm.vue';
 import FormTable from '@/components/PriceQuote/FormTable.vue';
 import BForm from '../components/BForm.vue';
 
