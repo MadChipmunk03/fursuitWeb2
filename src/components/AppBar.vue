@@ -14,6 +14,15 @@
       ></v-img>
       <v-spacer />
 
+      <v-menu v-if="!isMobile" :close-on-content-click="false" offset-x>
+        <template v-slot:activator="{ on, attrs }">
+          <v-icon :color="navIconColor" class="mr-4" v-bind="attrs" v-on="on"> mdi-cog </v-icon>
+        </template>
+        <v-card class="pa-4">
+          <UserSettings />
+        </v-card>
+      </v-menu>
+
       <template v-if="!isMobile" v-slot:extension>
         <v-tabs centered>
           <v-tab
@@ -39,12 +48,17 @@
           </router-link>
         </v-list-item-group>
       </v-list>
+
+      <template v-slot:append>
+        <UserSettings />
+      </template>
     </v-navigation-drawer>
   </v-container>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import UserSettings from './UserSettings.vue';
 
 export default Vue.extend({
   name: 'AppBar',
@@ -52,11 +66,11 @@ export default Vue.extend({
     return {
       drawer: false,
       tabs: [
-        { text: this.$t('appBarTabs[0]'), view: 'home' },
-        { text: this.$t('appBarTabs[1]'), view: 'merch' },
-        { text: this.$t('appBarTabs[2]'), view: 'calculator' },
-        { text: this.$t('appBarTabs[3]'), view: 'comissions' },
-        { text: this.$t('appBarTabs[4]'), view: 'aboutUs' },
+        { text: this.$t('appBar.tabs[0]'), view: 'home' },
+        { text: this.$t('appBar.tabs[1]'), view: 'merch' },
+        { text: this.$t('appBar.tabs[2]'), view: 'calculator' },
+        { text: this.$t('appBar.tabs[3]'), view: 'comissions' },
+        { text: this.$t('appBar.tabs[4]'), view: 'aboutUs' },
       ],
     };
   },
@@ -94,6 +108,7 @@ export default Vue.extend({
       return { width: 250, height: 70 };
     },
   },
+  components: { UserSettings },
 });
 </script>
 

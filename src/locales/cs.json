@@ -2,7 +2,13 @@
   "preset": {
     "welcome": "Výtej ve Vuetify!"
   },
-  "appBarTabs": ["Domů", "Merch", "Kalkulačka", "Zakázky", "O nás"],
+  "appBar": {
+    "tabs": ["Domů", "Merch", "Kalkulačka", "Zakázky", "O nás"],
+    "themeTitle": "Motiv",
+    "themes": ["Auto", "Světlý", "Tmavý"],
+    "langTitle": "Jazyk",
+    "langs": ["Auto", "Čeština", "Angličtina"]
+  },
   "home": {
     "comissionsAre": {
       "title": "Zakázky jsou:",
@@ -18,9 +24,6 @@
         "protogen": "Protogen"
       }
     }
-  },
-  "aboutUs": {
-    "working": "Pracujeme na tom..."
   },
   "priceQuote": {
     "notOpenForBusiness": "Momentálně nepřijímáme žádné poptávky",
@@ -82,6 +85,10 @@
       "total": "Celkem"
     },
     "sendBtn": "Odeslat poptávku"
+  },
+  "aboutUs": {
+    "header": "Kdo jsme?",
+    "text": "Jsme tým z Evropy, přesněji z České republiky. Já, Bambi, výrábím fursuity a dělám na zakázkách, poté tu je taky MadChipmunk03, který nakódoval celou stránku od základu. Používám kožešiny hlavně z mohairbearmakingsupplies anebo na vyžádání jde objednat i z Howl Fabrics. Výroba zakázek trvá celkem dlouho, ale dočkáte se. Všechny zakázky jsou vyrobené mnou (Bambim) a také s láskou. Během výroby na vaší zakázce budu s váma v kontaktu a budu posílat postup anebo jednotlivý probírat detaily, aby to bylo dle vašich představ."
   },
   "general": {
     "yes": "Ano",

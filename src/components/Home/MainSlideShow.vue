@@ -54,7 +54,7 @@ export default Vue.extend({
         { src: require('@/assets/homepage/proto_6.jpg'), orientation: ImgOrient.HORIZONTAL },
         { src: require('@/assets/homepage/proto_7.jpg'), orientation: ImgOrient.BOTH },
       ],
-      texts: ['UwU', '❤❤❤', 'Eeeeeeeeeeeeeeee!'],
+      texts: ['Bambilijáš', '❤❤❤', 'Eeeeeeeeeeeeeeee!'],
       typewriter: '',
     };
   },

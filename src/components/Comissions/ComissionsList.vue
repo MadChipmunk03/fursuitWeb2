@@ -1,8 +1,8 @@
 <template>
   <v-container>
-    <div v-for="(comission, ix) in comissions" :key="ix" :id="comission.title">
+    <div v-for="(comission, ix) in comissions" :key="ix">
       <v-divider v-if="ix !== 0" class="my-4" />
-      <v-sheet color="primary" class="d-flex">
+      <v-sheet color="primary" class="d-flex" :id="comission.title">
         <h1 class="mx-4">{{ comission.title }}</h1>
         <v-spacer />
         <h2 class="mx-4 mt-2">{{ $t('home.latestComissions.types.' + comission.type) }}</h2>
@@ -12,7 +12,7 @@
           ><p class="pa-4">{{ comission.desctiption }}</p>
         </v-col>
         <v-col cols="12" sm="6">
-          <v-img :src="comission.src" contain class="fill-height"></v-img>
+          <v-img :src="comission.src" :lazy-src="comission.lazySrc" contain class="fill-height"></v-img>
         </v-col>
       </v-row>
     </div>
@@ -25,6 +25,7 @@ import axios from 'axios';
 
 interface comission {
   src: string;
+  lazySrc: string;
   title: string;
   type: string;
   desctiption: string;

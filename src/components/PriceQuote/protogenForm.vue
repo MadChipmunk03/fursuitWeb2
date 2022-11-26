@@ -77,7 +77,7 @@ import axios from 'axios';
 import { ValidationProvider } from 'vee-validate';
 
 export default Vue.extend({
-  name: 'protogenForm',
+  name: 'ProtogenForm',
   components: { ValidationProvider },
   data() {
     return {
