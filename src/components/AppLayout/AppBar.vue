@@ -3,17 +3,15 @@
     <!-- DESKTOP = tabs; MOBILE = drawer -->
     <v-app-bar light :color="appBarColor" elevation="15" height="100" class="pb-0 mb-0" app>
       <v-app-bar-nav-icon v-if="isMobile" @click.stop="drawer = !drawer" :color="navIconColor"></v-app-bar-nav-icon>
-      <v-spacer />
       <v-img
-        class="float-center"
+        class="float-center mx-auto"
         @click="routeTo('home')"
         src="@/assets/MainLogoBambi.png"
         alt="Bambi logo"
         :max-height="logoDimensions.height"
         :max-width="logoDimensions.width"
       ></v-img>
-      <v-spacer />
-      <UserSettings v-if="!isMobile" />
+      <UserSettings v-if="!isMobile" class="usrSettings" />
 
       <template v-if="!isMobile" v-slot:extension>
         <v-tabs centered v-model="tabsModel">
@@ -106,9 +104,6 @@ export default Vue.extend({
       return { width: 250, height: 70 };
     },
   },
-  created() {
-    console.log(this.$route.path.substring(1, this.$route.path.length));
-  },
 });
 </script>
 
@@ -116,5 +111,10 @@ export default Vue.extend({
 .active-tab {
   color: rgba(0, 0, 0, 0.87) !important;
   background-color: rgba(0, 0, 0, 0.1);
+}
+.usrSettings {
+  z-index: 1000;
+  position: absolute;
+  right: 0;
 }
 </style>

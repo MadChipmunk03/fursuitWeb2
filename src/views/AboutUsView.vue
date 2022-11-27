@@ -5,6 +5,7 @@
       <v-card class="pa-8 mt-0 mb-4">
         <h2 class="mb-4">{{ $t('aboutUs.header') }}</h2>
         <p>{{ $t('aboutUs.text') }}</p>
+        <!-- <h2 class="mb-4">Socials:</h2> -->
       </v-card>
     </v-col>
     <v-spacer />

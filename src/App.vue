@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <AppBar />
-    <v-main :class="{ 'pt-0': $route.name === 'home' }" ref="vMain" >
+    <v-main :class="{ 'pt-0': $route.name === 'home' }">
       <router-view />
     </v-main>
 

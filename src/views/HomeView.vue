@@ -9,13 +9,7 @@
           <v-divider />
           <LatestComissions />
           <v-divider />
-          <iframe
-            src="TwitterFeed.htm"
-            :width="twitterFeedDimensions.width"
-            :style="twitterFeedDimensions.ratio"
-            class="my-4"
-            title="TwitterFeed preview"
-          ></iframe>
+          <TwitterFeed />
         </v-card>
       </v-col>
       <v-spacer />
@@ -27,17 +21,11 @@
 import CommisionsAre from '@/components/Home/ComissionsAre.vue';
 import MainSlideShow from '@/components/Home/MainSlideShow.vue';
 import LatestComissions from '@/components/Home/LatestComissions.vue';
+import TwitterFeed from '@/components/Home/TwitterFeed.vue';
 import Vue from 'vue';
 export default Vue.extend({
   name: 'HomeView',
-  components: { MainSlideShow, CommisionsAre, LatestComissions },
-  computed: {
-    twitterFeedDimensions() {
-      if (this.$vuetify.breakpoint.name == 'xs') return { width: '100%', ratio: 'aspect-ratio: 1 / 1' };
-      else if (this.$vuetify.breakpoint.name === 'sm') return { width: '70%', ratio: 'aspect-ratio: 2 / 1' };
-      else return { width: '100%', ratio: 'aspect-ratio: 2 / 1' };
-    },
-  },
+  components: { MainSlideShow, CommisionsAre, LatestComissions, TwitterFeed },
 });
 </script>
 
