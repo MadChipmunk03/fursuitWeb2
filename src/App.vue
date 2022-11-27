@@ -1,23 +1,22 @@
 <template>
   <v-app>
     <AppBar />
-    <v-main :class="{ 'pa-0': $route.name === 'home' }">
+    <v-main :class="{ 'pt-0': $route.name === 'home' }" ref="vMain" >
       <router-view />
     </v-main>
 
-    <AppFooter v-if="false" />
+    <AppFooter />
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import AppBar from '@/components/AppBar.vue';
-import AppFooter from './components/AppFooter.vue';
+import AppBar from '@/components/AppLayout/AppBar.vue';
+import AppFooter from './components/AppLayout/AppFooter.vue';
 
 export default Vue.extend({
   name: 'App',
   components: { AppBar, AppFooter },
-
   // TO-DO uncomment for darkMode support
   beforeMount() {
     //theme

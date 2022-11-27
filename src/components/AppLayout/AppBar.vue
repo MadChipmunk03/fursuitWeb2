@@ -16,10 +16,11 @@
       <UserSettings v-if="!isMobile" />
 
       <template v-if="!isMobile" v-slot:extension>
-        <v-tabs centered>
+        <v-tabs centered v-model="tabsModel">
           <v-tab
             v-for="(tab, ix) in tabs"
             :key="ix"
+            :href="`#${tab.view}`"
             @click="routeTo(tab.view)"
             :style="tabClass"
             :active-class="isHomePage ? '' : 'active-tab'"
@@ -34,7 +35,7 @@
       <h2 class="pa-4">{{ $t('appBar.nav') }}</h2>
       <v-divider />
       <v-list nav>
-        <v-list-item-group>
+        <v-list-item-group v-model="tabsModel">
           <router-link v-for="(tab, ix) in tabs" :key="ix" :to="{ name: tab.view }">
             <v-list-item>
               <v-list-item-title>{{ tab.text }}</v-list-item-title>
@@ -53,19 +54,21 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import UserSettings from './UserSettings.vue';
+import UserSettings from '../Generic/UserSettings.vue';
 
 export default Vue.extend({
   name: 'AppBar',
+  components: { UserSettings },
   data() {
     return {
       drawer: false,
+      tabsModel: this.$route.path.substring(1, this.$route.path.length),
       tabs: [
         { text: this.$t('appBar.tabs[0]'), view: 'home' },
         { text: this.$t('appBar.tabs[1]'), view: 'merch' },
         { text: this.$t('appBar.tabs[2]'), view: 'calculator' },
         { text: this.$t('appBar.tabs[3]'), view: 'comissions' },
-        { text: this.$t('appBar.tabs[4]'), view: 'aboutUs' },
+        { text: this.$t('appBar.tabs[4]'), view: 'about-us' },
       ],
     };
   },
@@ -103,7 +106,9 @@ export default Vue.extend({
       return { width: 250, height: 70 };
     },
   },
-  components: { UserSettings },
+  created() {
+    console.log(this.$route.path.substring(1, this.$route.path.length));
+  },
 });
 </script>
 

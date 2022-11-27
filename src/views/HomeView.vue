@@ -14,7 +14,7 @@
             :width="twitterFeedDimensions.width"
             :style="twitterFeedDimensions.ratio"
             class="my-4"
-            title="Iframe Example"
+            title="TwitterFeed preview"
           ></iframe>
         </v-card>
       </v-col>

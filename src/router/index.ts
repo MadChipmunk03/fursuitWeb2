@@ -31,7 +31,7 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/about-us',
-    name: 'aboutUs',
+    name: 'about-us',
     component: AboutUsView,
   },
 ];
