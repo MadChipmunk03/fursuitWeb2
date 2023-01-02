@@ -7,7 +7,7 @@
       <v-col cols="12" sm="6" class="pa-0">
         <v-sheet color="primary" class="fill-height d-flex flex-column">
           <h1 class="mt-auto">{{ comission.title }}</h1>
-          <h2 class="mb-auto">{{ $t('home.latestComissions.types.' + comission.type) }}</h2>
+          <h2 class="mb-auto">{{ comission.speciece }}</h2>
         </v-sheet>
       </v-col>
       <v-col v-if="ix % 2 === 0 || $vuetify.breakpoint.name === 'xs'" cols="12" sm="6" class="pa-0">
@@ -24,7 +24,9 @@ import axios from 'axios';
 interface comission {
   src: string;
   title: string;
-  type: string;
+  speciece: string;
+  specieceCs: string;
+  specieceEn: string;
   desctiption: string;
 }
 
@@ -43,7 +45,11 @@ export default Vue.extend({
   created() {
     axios
       .get('config.json')
-      .then(res => (this.comissions = res.data.comissions))
+      .then(res => {
+        this.comissions.forEach(com => {
+          com.speciece = this.$i18n.locale === 'en' ? com.specieceEn : com.specieceCs;
+        });
+      })
       .catch(err => console.log(err));
   },
 });

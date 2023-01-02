@@ -15,15 +15,6 @@
       "title": "Comissions are:",
       "open": "Open",
       "close": "Close"
-    },
-    "latestComissions": {
-      "types": {
-        "fox": "Fox",
-        "wolf": "Wolf",
-        "cat": "Cat",
-        "other": "Other",
-        "protogen": "Protogen"
-      }
     }
   },
   "priceQuote": {

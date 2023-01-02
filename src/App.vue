@@ -29,10 +29,16 @@ export default Vue.extend({
 });
 </script>
 <style>
+@import url('https://fonts.cdnfonts.com/css/bahnschrift');
+.v-application {
+  font-family: 'bahnschrift', sans-serif !important;
+}
+
 html {
+  min-height: 100%;
   overflow-y: auto;
 }
 body {
-  min-height: 100vh;
+  min-height: 100%;
 }
 </style>

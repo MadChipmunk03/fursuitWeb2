@@ -5,7 +5,7 @@
       <v-sheet color="primary" class="d-flex" :id="comission.title">
         <h1 class="mx-4">{{ comission.title }}</h1>
         <v-spacer />
-        <h2 class="mx-4 mt-2">{{ $t('home.latestComissions.types.' + comission.type) }}</h2>
+        <h2 class="mx-4 mt-2">{{ comission.speciece }}</h2>
       </v-sheet>
       <v-row>
         <v-col cols="12" sm="6" class="text-left">
@@ -37,7 +37,9 @@ interface comission {
   src: string;
   lazySrc: string;
   title: string;
-  type: string;
+  speciece: string;
+  specieceCs: string;
+  specieceEn: string;
   desctiption: string;
   list: desctiptionList[];
   listEn: desctiptionList[];
@@ -57,7 +59,10 @@ export default Vue.extend({
       .get('config.json')
       .then(res => {
         this.comissions = res.data.comissions;
-        this.comissions.forEach(com => (com.list = this.$i18n.locale === 'en' ? com.listEn : com.listCs));
+        this.comissions.forEach(com => {
+          com.list = this.$i18n.locale === 'en' ? com.listEn : com.listCs;
+          com.speciece = this.$i18n.locale === 'en' ? com.specieceEn : com.specieceCs;
+        });
       })
       .catch(err => console.log(err));
   },

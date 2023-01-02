@@ -9,10 +9,10 @@ export default new Vuetify({
     options: { customProperties: true },
     themes: {
       light: {
-        // primary: colors.amber,
-        // primaryInvert: '#2A92AB',
-        primary: '#2A92AB',
-        primaryInvert: colors.amber,
+        primary: colors.amber,
+        primaryInvert: '#2A92AB',
+        // primary: '#2A92AB',
+        // primaryInvert: colors.amber,
       },
       dark: {
         primary: '#2A92AB',

@@ -1,31 +1,64 @@
 {
   "commisionsAreOpen": false,
   "sendMail": false,
-  "typewriter": ["Eeeeeeeeeeeee!", "Let's go!", "UwU"],
+  "typewriter": ["Eeeeeeeeeeeee!", "Let's go!", "UwU", "OwO", "Hewwoooo", "Nyaaaaa", "Hewu", "How are you?", "I am a fox", "I make suits!", "Hugs are cool", "Foxes are AWESOME", "Beep Boop"],
   "comissions": [
     {
+      "src": "https://cdn.discordapp.com/attachments/595684281003540480/1038774731438047343/image.png",
+      "lazySrc": "https://cdn.discordapp.com/attachments/595684281003540480/1046487253611970661/LixoLazy.png",
+      "title": "Lixo",
+      "type": "lynx",
+      "specieceCs": "Rys",
+      "specieceEn": "Lynx",
+      "listCs": [
+        { "content": "Druh", "value": "Hlava" },
+        { "content": "Majitel", "value": "Kessidy" },
+        { "content": "Barvy", "value": "Černá, hnědá, šedá, tygří vzor" },
+        { "content": "Vyrobeno", "value": "13. říjen 2022" }
+      ],
+      "listEn": [
+        { "content": "Type", "value": "Head" },
+        { "content": "Owner", "value": "Kessidy" },
+        { "content": "Colors", "value": "Black, brown, grey, tiger pattern" },
+        { "content": "Made", "value": "October 10th 2022" }
+      ]
+    }, 
+   {
       "src": "https://cdn.discordapp.com/attachments/595684281003540480/1038740692467470346/image.png",
-      "lazySrc": "",
+      "lazySrc": "https://cdn.discordapp.com/attachments/595684281003540480/1046487649617195078/BambiLazy.png",
       "title": "Bambi",
-      "type": "fox",
-      "desctiption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit."
+      "specieceCs": "Liška",
+      "specieceEn": "Fox",
+      "listCs": [
+        { "content": "Druh", "value": "Mini Partial" },
+        { "content": "Majitel", "value": "Bambi.lijas" },
+        { "content": "Barvy", "value": "Bílá, žlutá, hnědá, černá, tyrkysová" },
+        { "content": "Vyrobeno", "value": "19. srpna 2021" }
+      ],
+      "listEn": [
+        { "content": "Type", "value": "Mini Partial" },
+        { "content": "Owner", "value": "Bambi.lijas" },
+        { "content": "Colors", "value": "White, yellow, brown, black, turquoise" },
+        { "content": "Made", "value": "August 19th 2021" }
+      ]
     },
     {
       "src": "https://cdn.discordapp.com/attachments/595684281003540480/1038743706162974790/image.png",
-      "lazySrc": "",
+      "lazySrc": "https://cdn.discordapp.com/attachments/595684281003540480/1046487920925757601/PhirstLazy.png",
       "title": "Phirst",
-      "type": "protogen",
+      "specieceCs": "Protogen",
+      "specieceEn": "Protogen",
       "listCs": [
-        { "content": "Druh", "value": "ocas" },
-        { "content": "Majitel", "value": "SuperMajitel" },
-        { "content": "Barvy", "value": "bílá, červená, hnědá" },
-        { "content": "Vyrobeno", "value": "5. března 2037" }
+        { "content": "Druh", "value": "Mini Partial" },
+        { "content": "Majitel", "value": "Bambi.lijas" },
+        { "content": "Barvy", "value": "Bílá, žlutá, hnědá, černá" },
+        { "content": "Vyrobeno", "value": "8. března 2022" }
       ],
       "listEn": [
-        { "content": "Type", "value": "tail" },
-        { "content": "Owner", "value": "SuperMajitel" },
-        { "content": "Colors", "value": "white, black, brown" },
-        { "content": "Made", "value": "March 6th 2037" }
+        { "content": "Type", "value": "Mini Partial" },
+        { "content": "Owner", "value": "Bambi.lijas" },
+        { "content": "Colors", "value": "White, yellow, brown, black" },
+        { "content": "Made", "value": "March 8th 2022" }
       ]
     }
   ]

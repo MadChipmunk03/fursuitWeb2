@@ -15,15 +15,6 @@
       "title": "Zakázky jsou:",
       "open": "Otevřené",
       "close": "Uzavřené"
-    },
-    "latestComissions": {
-      "types": {
-        "fox": "Liška",
-        "wolf": "Vlk",
-        "cat": "Kočka",
-        "other": "Jiné",
-        "protogen": "Protogen"
-      }
     }
   },
   "priceQuote": {
