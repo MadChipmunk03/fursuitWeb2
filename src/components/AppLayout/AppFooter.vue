@@ -13,7 +13,7 @@
       <v-divider class="pb-4" />
 
       <v-card-text class="black--text pt-0"> (C) Made By Bambi </v-card-text>
-      <v-card-text class="black--text pt-0"> Website made by MadChipmunk03 </v-card-text>
+      <v-card-text class="black--text pt-0"> {{ $t('footer.webMadeBy') }} MadChipmunk03 </v-card-text>
     </v-card>
   </v-footer>
 </template>
