@@ -44,7 +44,7 @@
 
       <template v-slot:append>
         <v-divider />
-        <UserSettings class="pt-4" />
+        <UserSettings class="pt-4 mb-16" />
       </template>
     </v-navigation-drawer>
   </v-container>

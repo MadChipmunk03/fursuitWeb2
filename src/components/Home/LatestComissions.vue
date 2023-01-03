@@ -46,6 +46,7 @@ export default Vue.extend({
     axios
       .get('config.json')
       .then(res => {
+        this.comissions = res.data.comissions;
         this.comissions.forEach(com => {
           com.speciece = this.$i18n.locale === 'en' ? com.specieceEn : com.specieceCs;
         });
