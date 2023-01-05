@@ -16,9 +16,10 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Build
-        uses: actions/setup-node@master
+      - uses: actions/setup-node@master
         with:
           node-version: 16
+      - run: npm i @vue/cli-service
       - run: npm run build
 
       - name: SFTP Deploy
