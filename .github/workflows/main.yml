@@ -25,9 +25,9 @@ jobs:
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
-          username: peta
-          server: madchipmunk03.cz
-          port: 2022 # default is 22
+          username: ${{ secrets.SSH_RPI_USER }}
+          server: ${{ secrets.SSH_RPI_HOST }}
+          port: ${{ secrets.SSH_RPI_PORT }} # default is 22
           ssh_private_key: ${{ secrets.SSH_RPI_PUBLIC_KEY }}
 
           # will put all file under this path
@@ -37,3 +37,20 @@ jobs:
 
           # sftp args
           args: '-o ConnectTimeout=5'
+          
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.SSH_RPI_HOST }}
+          username: ${{ secrets.SSH_RPI_USER }}
+          key: ${{ secrets.SSH_RPI_PUBLIC_KEY }}
+          port: ${{ secrets.SSH_RPI_PORT }}
+          script: |
+            cd /mnt/serverDrive/www/madebybambi.com 
+            sudo rm -r ./*
+            sudo cp -r /home/peta/tpm/* ./
+            sudo rm config.json
+            sudo ln -s /mnt/ssdDrive/sftp/files/bambi/config.json ./config.json
+            sudo chmod -R 755 ./
+            sudo chown -R www-data:www-data ./
+            sudo systemctl restart nginx
