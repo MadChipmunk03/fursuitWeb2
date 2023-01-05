@@ -46,11 +46,4 @@ jobs:
           key: ${{ secrets.SSH_RPI_PUBLIC_KEY }}
           port: ${{ secrets.SSH_RPI_PORT }}
           script: |
-            cd /mnt/serverDrive/www/madebybambi.com 
-            sudo rm -r ./*
-            sudo cp -r /home/peta/tpm/* ./
-            sudo rm config.json
-            sudo ln -s /mnt/ssdDrive/sftp/files/bambi/config.json ./config.json
-            sudo chmod -R 755 ./
-            sudo chown -R www-data:www-data ./
-            sudo systemctl restart nginx
+            ${{ secrets.RPI_SCRIPT_FsW2 }}
