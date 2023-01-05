@@ -1,7 +1,7 @@
 <template>
-  <v-row class="mb-0 mx-0">
+  <v-row class="mb-0 mx-0 py-0">
     <v-spacer />
-    <v-col cols="12" md="6" class="px-0">
+    <v-col cols="12" md="6" class="pa-0">
       <v-card class="pa-4 mb-4" align="center" justify="center">
         <ComissionsAre />
         <ComissionsList />
