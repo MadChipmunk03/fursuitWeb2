@@ -47,6 +47,7 @@ jobs:
           port: ${{ secrets.SSH_RPI_PORT }}
           script: |
             cd /mnt/serverDrive/www/madebybambi.com 
+            sudo rm /home/peta/tpm/config.json
             sudo cp -r /home/peta/tpm/* ./
             sudo chmod -R 755 ./
             sudo chown -R www-data:www-data ./
