@@ -47,8 +47,8 @@ jobs:
           port: ${{ secrets.SSH_RPI_PORT }}
           script: |
             cd /mnt/serverDrive/www/madebybambi.com 
-            sudo rm -r !(config.json|files)
-            sudo cp -r /home/peta/tpm/!(config.json|files) ./
+            sudo rm -r !(config.json)
+            sudo cp -r /home/peta/tpm/!("config.json"|"files") ./
             sudo chmod -R 755 ./
             sudo chown -R www-data:www-data ./
             sudo systemctl restart nginx
