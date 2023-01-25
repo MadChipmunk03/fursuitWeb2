@@ -8,7 +8,7 @@
         <h2 class="mb-4">Downloads:</h2>
         <ul>
           <li v-for="link in downloads" :key="link.i18n">
-            <a :href="link.url">{{ $t(`aboutUs.downloads.${link.i18n}`) }}</a>
+            <a :href="link.url" target="_blank">{{ $t(`aboutUs.downloads.${link.i18n}`) }}</a>
           </li>
         </ul>
         <p></p>
@@ -25,17 +25,15 @@ export default Vue.extend({
   name: 'AboutUsView',
   data() {
     return {
-      downloads: [
-        {url: 'https://madebybambi.com/files/NFC_Tag_Manual.pdf', i18n: 'nfcTag'}
-      ]
-    }
+      downloads: [{ url: 'https://madebybambi.com/files/NFC_Tag_Manual.pdf', i18n: 'nfcTag' }],
+    };
   },
   computed: {
     isMobile() {
       const size = this.$vuetify.breakpoint.name;
       return ['xs', 'sm'].includes(size);
     },
-  }
+  },
 });
 </script>
 
