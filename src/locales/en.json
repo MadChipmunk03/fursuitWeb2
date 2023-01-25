@@ -82,7 +82,11 @@
   },
   "aboutUs": {
     "header": "Who are we?",
-    "text": "We are a team from Europe, the Czech Republic. My name is Bambi, I do all the fursuits and commissions, then there is MadChipmunk03, he coded whole website from scratch. We use fabrics mainly from mohairbearmakingsupplies or with special order from Howl Fabrics. The commissions take a while to make, but you´ll need to wait if you want. All the commissions are made by Bambi with love. When I am working on your commission, I will be in contact with you to discuss progress or details."
+    "text": "We are a team from Europe, the Czech Republic. My name is Bambi, I do all the fursuits and commissions, then there is MadChipmunk03, he coded whole website from scratch. We use fabrics mainly from mohairbearmakingsupplies or with special order from Howl Fabrics. The commissions take a while to make, but you´ll need to wait if you want. All the commissions are made by Bambi with love. When I am working on your commission, I will be in contact with you to discuss progress or details.",
+    "downloadsTitle": "Downloads",
+    "downloads": {
+      "nfcTag": "NFC Tag Manual"
+    }
   },
   "footer": {
     "webMadeBy": "Website made by"

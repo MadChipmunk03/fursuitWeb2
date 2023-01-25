@@ -5,7 +5,13 @@
       <v-card class="pa-8 mt-0 mb-4">
         <h2 class="mb-4">{{ $t('aboutUs.header') }}</h2>
         <p>{{ $t('aboutUs.text') }}</p>
-        <!-- <h2 class="mb-4">Socials:</h2> -->
+        <h2 class="mb-4">{{ $t('aboutUs.downloadsTitle') }}</h2>
+        <ul>
+          <li v-for="link in downloads" :key="link.i18n">
+            <a :href="link.url" target="_blank">{{ $t(`aboutUs.downloads.${link.i18n}`) }}</a>
+          </li>
+        </ul>
+        <p></p>
       </v-card>
     </v-col>
     <v-spacer />
@@ -17,6 +23,17 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'AboutUsView',
+  data() {
+    return {
+      downloads: [{ url: 'https://madebybambi.com/files/NFC_Tag_Manual.pdf', i18n: 'nfcTag' }],
+    };
+  },
+  computed: {
+    isMobile() {
+      const size = this.$vuetify.breakpoint.name;
+      return ['xs', 'sm'].includes(size);
+    },
+  },
 });
 </script>
 
