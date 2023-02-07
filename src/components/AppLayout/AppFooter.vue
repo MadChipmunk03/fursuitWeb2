@@ -37,7 +37,7 @@ export default Vue.extend({
       socials: [
         { icon: 'mdi-twitter', url: 'https://twitter.com/Bambilijas?t=xMcHeGzn7xZLPjwb6WElbg&s=09' },
         { icon: 'mdi-instagram', url: 'https://www.instagram.com/p/Ckh-GF0qaye/?igshid=MDJmNzVkMjY=' },
-        { icon: require('@/assets/footer/telegram.svg'), url: 'https://t.me/Bambilijas' },
+        { icon: require('@/assets/footer/telegram.svg'), url: 'https://t.me/bambisworkshop' },
         { icon: require('@/assets/footer/koFi.svg'), url: 'https://ko-fi.com/bambilijas' },
         { icon: require('@/assets/footer/discord.svg'), url: 'https://discord.gg/TJzEnSa' },
       ],
