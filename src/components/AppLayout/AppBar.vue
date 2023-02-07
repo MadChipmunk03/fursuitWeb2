@@ -60,7 +60,7 @@ export default Vue.extend({
   data() {
     return {
       drawer: false,
-      tabsModel: this.$route.path.substring(1, this.$route.path.length),
+      tabsModel: this.$route.name,
       tabs: [
         { text: this.$t('appBar.tabs[0]'), view: 'home' },
         { text: this.$t('appBar.tabs[1]'), view: 'merch' },
@@ -103,6 +103,9 @@ export default Vue.extend({
       if (['xl', 'lg'].includes(this.$vuetify.breakpoint.name)) return { width: 400, height: 80 };
       return { width: 250, height: 70 };
     },
+  },
+  created() {
+    console.log(this.$route);
   },
 });
 </script>

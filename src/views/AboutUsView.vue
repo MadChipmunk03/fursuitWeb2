@@ -5,7 +5,7 @@
       <v-card class="pa-8 mt-0 mb-4">
         <h2 class="mb-4">{{ $t('aboutUs.header') }}</h2>
         <p>{{ $t('aboutUs.text') }}</p>
-        
+
         <AboutUsSocials />
 
         <h2 class="mb-4">{{ $t('aboutUs.downloadsTitle') }}</h2>
@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import AboutUsSocials from '@/components/AppLayout/AboutUsSocials.vue';
+import AboutUsSocials from '@/components/AbouUs/AboutUsSocials.vue';
 import Vue from 'vue';
 
 export default Vue.extend({
