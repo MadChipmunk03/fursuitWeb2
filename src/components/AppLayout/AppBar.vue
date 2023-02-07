@@ -75,6 +75,11 @@ export default Vue.extend({
       this.$router.push({ name: routeName });
     },
   },
+  watch: {
+    '$route.name': function (newVal) {
+      this.tabsModel = newVal;
+    },
+  },
   computed: {
     isMobile() {
       const size = this.$vuetify.breakpoint.name;
