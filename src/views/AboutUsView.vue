@@ -5,13 +5,15 @@
       <v-card class="pa-8 mt-0 mb-4">
         <h2 class="mb-4">{{ $t('aboutUs.header') }}</h2>
         <p>{{ $t('aboutUs.text') }}</p>
+        
+        <AboutUsSocials />
+
         <h2 class="mb-4">{{ $t('aboutUs.downloadsTitle') }}</h2>
         <ul>
           <li v-for="link in downloads" :key="link.i18n">
             <a :href="link.url" target="_blank">{{ $t(`aboutUs.downloads.${link.i18n}`) }}</a>
           </li>
         </ul>
-        <p></p>
       </v-card>
     </v-col>
     <v-spacer />
@@ -19,6 +21,7 @@
 </template>
 
 <script lang="ts">
+import AboutUsSocials from '@/components/AppLayout/AboutUsSocials.vue';
 import Vue from 'vue';
 
 export default Vue.extend({
@@ -34,6 +37,7 @@ export default Vue.extend({
       return ['xs', 'sm'].includes(size);
     },
   },
+  components: { AboutUsSocials },
 });
 </script>
 
