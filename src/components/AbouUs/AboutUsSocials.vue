@@ -52,9 +52,10 @@ export default Vue.extend({
         },
         { icon: require('@/assets/footer/koFi.svg'), url: 'https://ko-fi.com/bambilijas', caption: 'KoFi' },
         { icon: require('@/assets/footer/discord.svg'), url: 'https://discord.gg/TJzEnSa', caption: 'Discord' },
+        { icon: 'mdi-trello', url: 'https://trello.com/b/twL8gdNc/bambis-workshop', caption: 'Trello' },
         {
           icon: 'mdi-email-outline',
-          url: 'mailto: madybybambi@gmail.com',
+          url: 'mailto: info.madebybambi@gmail.com',
           caption: 'Email',
         },
       ],
