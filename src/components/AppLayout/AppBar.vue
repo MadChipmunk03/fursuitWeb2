@@ -21,7 +21,7 @@
             :href="`#${tab.view}`"
             @click="routeTo(tab.view)"
             :style="tabClass"
-            :active-class="isHomePage ? '' : 'active-tab'"
+            :active-class="isHomePage || isDarkTheme ? 'active-tab1' : 'active-tab2'"
           >
             {{ tab.text }}
           </v-tab>
@@ -83,12 +83,15 @@ export default Vue.extend({
     isHomePage() {
       return this.$route.name === 'home';
     },
+    isDarkTheme() {
+      return this.$vuetify.theme.dark;
+    },
     appBarColor() {
       if (this.isHomePage) return 'rgba(0, 0, 0, 0.5)';
       else return 'primary';
     },
     tabClass() {
-      if (this.isHomePage) {
+      if (this.isHomePage || this.isDarkTheme) {
         return {
           color: 'white',
         };
@@ -108,7 +111,10 @@ export default Vue.extend({
 </script>
 
 <style scope lang="scss">
-.active-tab {
+.active-tab1 {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.active-tab2 {
   color: rgba(0, 0, 0, 0.87) !important;
   background-color: rgba(0, 0, 0, 0.1);
 }

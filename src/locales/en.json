@@ -86,7 +86,8 @@
     "socialsTitle": "Socials",
     "downloadsTitle": "Downloads",
     "downloads": {
-      "nfcTag": "NFC Tag Manual"
+      "nfcTag": "NFC Tag Manual",
+      "protogenPcb": "Custom PCB (circuit board)"
     }
   },
   "footer": {

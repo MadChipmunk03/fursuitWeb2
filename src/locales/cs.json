@@ -84,7 +84,8 @@
     "socialsTitle": "Kontakty",
     "downloadsTitle": "Ke stažení",
     "downloads": {
-      "nfcTag": "ŇFC Tag Manuál"
+      "nfcTag": "ŇFC Tag Manuál",
+      "protogenPcb": "Vlastní PCB (obvodová deska)"
     }
   },
   "footer": {

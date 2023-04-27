@@ -5,7 +5,7 @@
       <v-card class="pa-8 mt-0 mb-4">
         <h2 class="mb-4">{{ $t('aboutUs.header') }}</h2>
         <p>{{ $t('aboutUs.text') }}</p>
-        
+
         <AboutUsSocials />
 
         <h2 class="mb-4">{{ $t('aboutUs.downloadsTitle') }}</h2>
@@ -28,7 +28,10 @@ export default Vue.extend({
   name: 'AboutUsView',
   data() {
     return {
-      downloads: [{ url: 'https://madebybambi.com/files/NFC_Tag_Manual.pdf', i18n: 'nfcTag' }],
+      downloads: [
+        { url: 'https://madebybambi.com/files/NFC_Tag_Manual.pdf', i18n: 'nfcTag' },
+        { url: 'https://madebybambi.com/files/Protogen_PCB.pdf', i18n: 'protogenPcb' },
+      ],
     };
   },
   computed: {
