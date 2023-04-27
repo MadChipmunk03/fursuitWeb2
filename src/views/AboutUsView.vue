@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import AboutUsSocials from '@/components/AppLayout/AboutUsSocials.vue';
+import AboutUsSocials from '@/components/AbouUs/AboutUsSocials.vue';
 import Vue from 'vue';
 
 export default Vue.extend({

@@ -4,11 +4,18 @@
 
     <div class="cards" :style="isWide">
       <v-card
-        v-for="social in socials"
-        :key="social"
-        class="ma-2 pa-2 text-center d-flex flex-column align-center justify-center"
+        v-for="(social, ix) in socials"
+        :key="ix"
+        :href="social.url"
+        target="_blank"
+        elevation="4"
+        class="ma-2 pa-2 pt-4 text-center d-flex flex-column align-center justify-center"
       >
-        <v-card-text>{{ social.caption }}</v-card-text>
+        <v-icon v-if="social.icon.substring(0, 4) === 'mdi-'" size="24px">
+          {{ social.icon }}
+        </v-icon>
+        <v-img v-else :src="social.icon" :class="{ invertIcon: isDark }" max-height="24px" max-width="24px"> </v-img>
+        <v-card-actions>{{ social.caption }}</v-card-actions>
       </v-card>
     </div>
   </v-container>
@@ -35,11 +42,22 @@ export default Vue.extend({
         },
         {
           icon: require('@/assets/footer/telegram.svg'),
+          url: 'https://t.me/bambisworkshop',
+          caption: 'Telegram (Workshop)',
+        },
+        {
+          icon: require('@/assets/footer/telegram.svg'),
           url: 'https://t.me/Bambilijas',
           caption: 'Telegram (Bambilijáš)',
         },
         { icon: require('@/assets/footer/koFi.svg'), url: 'https://ko-fi.com/bambilijas', caption: 'KoFi' },
         { icon: require('@/assets/footer/discord.svg'), url: 'https://discord.gg/TJzEnSa', caption: 'Discord' },
+        { icon: 'mdi-trello', url: 'https://trello.com/b/twL8gdNc/bambis-workshop', caption: 'Trello' },
+        {
+          icon: 'mdi-email-outline',
+          url: 'mailto: info.madebybambi@gmail.com',
+          caption: 'Email',
+        },
       ],
     };
   },
@@ -48,6 +66,9 @@ export default Vue.extend({
       return ['xl', 'lg', 'sm'].includes(this.$vuetify.breakpoint.name)
         ? 'grid-template-columns: 1fr 1fr 1fr 1fr;'
         : 'grid-template-columns: 1fr 1fr;';
+    },
+    isDark(): boolean {
+      return this.$vuetify.theme.dark;
     },
   },
 });
@@ -58,5 +79,8 @@ export default Vue.extend({
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: auto;
+}
+.invertIcon {
+  filter: invert(1);
 }
 </style>
