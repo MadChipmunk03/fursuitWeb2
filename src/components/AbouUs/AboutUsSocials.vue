@@ -14,7 +14,7 @@
         <v-icon v-if="social.icon.substring(0, 4) === 'mdi-'" size="24px">
           {{ social.icon }}
         </v-icon>
-        <v-img v-else :src="social.icon" :class="{ invertIcon: isDark }" max-height="24px" max-width="24px"> </v-img>
+        <v-img v-else :src="social.icon" :class="isDark ? 'invertIcon' : 'normalIcon'" max-height="24px" max-width="24px"> </v-img>
         <v-card-actions>{{ social.caption }}</v-card-actions>
       </v-card>
     </div>
@@ -79,6 +79,9 @@ export default Vue.extend({
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: auto;
+}
+.normalIcon {
+  filter: invert(0.5);
 }
 .invertIcon {
   filter: invert(1);

@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import CommisionsAre from '@/components/Home/ComissionsAre.vue';
+import CommisionsAre from '@/components/Comissions/ComissionsAre.vue';
 import MainSlideShow from '@/components/Home/MainSlideShow.vue';
 import LatestComissions from '@/components/Home/LatestComissions.vue';
 import TwitterFeed from '@/components/Home/TwitterFeed.vue';

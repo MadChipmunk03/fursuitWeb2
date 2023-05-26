@@ -30,7 +30,7 @@ export default Vue.extend({
     return {
       downloads: [
         { url: 'https://madebybambi.com/files/NFC_Tag_Manual.pdf', i18n: 'nfcTag' },
-        { url: 'https://madebybambi.com/files/Protogen_PCB.pdf', i18n: 'protogenPcb' },
+        // { url: 'https://madebybambi.com/files/Protogen_PCB.pdf', i18n: 'protogenPcb' },
       ],
     };
   },
