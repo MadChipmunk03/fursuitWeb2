@@ -13,15 +13,15 @@
         >
           <template v-slot:activator="{ props }">
             <v-btn v-bind="props" @click="dialog = true" >
-              <v-card-subtitle color="secondary">Poslat mail po otevření</v-card-subtitle>
+              <v-card-subtitle color="secondary">{{ $t('home.comissionsAre.dialogOpenBtn') }}</v-card-subtitle>
             </v-btn>
           </template>
 
           <v-card class="px-2 py-4" :disabled="sendingSubscription" width="400">
             <BForm :handleSubmit="register">
-              <v-card-title>Přihlásit se k odběru</v-card-title>
+              <v-card-title>{{ $t('home.comissionsAre.dialogTitle') }}</v-card-title>
               <v-card-text>
-              Zadejte níže svůj email a my vám pošleme oznámení po otevření comissionů.
+                {{ $t('home.comissionsAre.dialogText') }}
               </v-card-text>
 
               <ValidationProvider  rules="required|email" v-slot="{ errors }">
@@ -31,9 +31,9 @@
 
               <v-card-actions>
                 <v-spacer />
-                <v-btn @click="dialog = false">Zrušit</v-btn>
+                <v-btn @click="dialog = false">{{ $t('general.cancel') }}</v-btn>
                 <v-btn color="primary" type="submit" :loading="sendingSubscription">
-                  <v-icon right v-if="subscriptionSend" > mdi-check </v-icon> Přihlásit
+                  <v-icon right v-if="subscriptionSend" > mdi-check </v-icon> {{ $t('general.subscribe') }}
                 </v-btn>
               </v-card-actions>
             </BForm>
