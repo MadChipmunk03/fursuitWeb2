@@ -14,7 +14,10 @@
     "comissionsAre": {
       "title": "Comissions are:",
       "open": "Open",
-      "close": "Close"
+      "close": "Close",
+      "dialogOpenBtn": "Send mail once open",
+      "dialogTitle": "Subscribe",
+      "dialogText": "Enter your email below and we will send you a notification when the comissions are open."
     }
   },
   "priceQuote": {
@@ -95,7 +98,9 @@
   },
   "general": {
     "yes": "Yes",
-    "no": "No"
+    "no": "No",
+    "cancel": "Cancel",
+    "subscribe": "Subscribe"
   },
   "validations": {
     "required": "field is required",

@@ -14,7 +14,10 @@
     "comissionsAre": {
       "title": "Zakázky jsou:",
       "open": "Otevřené",
-      "close": "Uzavřené"
+      "close": "Uzavřené",
+      "dialogOpenBtn": "Poslat mail po otevření",
+      "dialogTitle": "Přihlásit se k odběru",
+      "dialogText": "Zadejte níže svůj email a my vám pošleme oznámení po otevření comissionů."
     }
   },
   "priceQuote": {
@@ -93,7 +96,9 @@
   },
   "general": {
     "yes": "Ano",
-    "no": "ne"
+    "no": "ne",
+    "cancel": "Zrušit",
+    "subscribe": "Přihlásit"
   },
   "validations": {
     "required": "pole je povinné",
