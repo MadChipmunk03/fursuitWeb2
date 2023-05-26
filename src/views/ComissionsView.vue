@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import ComissionsAre from '@/components/Home/ComissionsAre.vue';
+import ComissionsAre from '@/components/Comissions/ComissionsAre.vue';
 import ComissionsList from '@/components/Comissions/ComissionsList.vue';
 
 export default Vue.extend({

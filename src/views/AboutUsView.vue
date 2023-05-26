@@ -28,7 +28,10 @@ export default Vue.extend({
   name: 'AboutUsView',
   data() {
     return {
-      downloads: [{ url: 'https://madebybambi.com/files/NFC_Tag_Manual.pdf', i18n: 'nfcTag' }],
+      downloads: [
+        { url: 'https://madebybambi.com/files/NFC_Tag_Manual.pdf', i18n: 'nfcTag' },
+        // { url: 'https://madebybambi.com/files/Protogen_PCB.pdf', i18n: 'protogenPcb' },
+      ],
     };
   },
   computed: {
