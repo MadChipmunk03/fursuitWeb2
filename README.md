@@ -1,4 +1,4 @@
-# Personal website for Bambilijáš
+# <a href="https://madebybambi.com/#/">Personal website for Bambilijáš</a>
 
 <img src="images/madebybambi1.png" width="100%" /> 
 
