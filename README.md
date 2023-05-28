@@ -1,4 +1,4 @@
-# Personal website for BambilijáŠ
+# Personal website for Bambilijáš
 
 <img src="images/madebybambi1.png" width="100%" /> 
 
