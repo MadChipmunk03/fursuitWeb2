@@ -2,7 +2,6 @@
 
 <img src="images/madebybambi1.png" width="100%" /> 
 
-### If HR reads this
 It is a personal website for bambilijáš made with vue.js. It's responsive, supports dark theme, multiple languages (czech/english) and can be configured through config file on shared drive.
 
 <div>
