@@ -6,7 +6,7 @@
           v-for="social in socials"
           :key="social.url"
           class="mx-4"
-          :class="isDark ? 'white--text' : 'black--text'"
+          :class="textTheme"
           icon
           :href="social.url"
         >
@@ -19,9 +19,9 @@
 
       <v-divider class="pb-4" />
 
-      <v-card-text :class="isDark ? 'white--text' : 'black--text'" class="pt-0"> (C) Made By Bambi </v-card-text>
-      <v-card-text :class="isDark ? 'white--text' : 'black--text'" class="pt-0">
-        Website made by MadChipmunk03
+      <v-card-text :class="textTheme" class="pt-0"> (C) Made By Bambi | <a :class="textTheme" class="text-decoration-underline" @click="routeTo('terms-of-service')">{{ $t('tos.title') }}</a> </v-card-text>
+      <v-card-text :class="textTheme" class="pt-0">
+        Website made by <a href="https://madchipmunk03.cz/" target="_blank" :class="textTheme">MadChipmunk03</a>
       </v-card-text>
     </v-card>
   </v-footer>
@@ -43,9 +43,17 @@ export default Vue.extend({
       ],
     };
   },
+  methods: {
+    routeTo(routeName: string) {
+      this.$router.push({ name: routeName });
+    },
+  },
   computed: {
     isDark(): boolean {
       return this.$vuetify.theme.dark;
+    },
+    textTheme(): string {
+      return this.isDark ? 'white--text' : 'black--text'
     },
   },
 });

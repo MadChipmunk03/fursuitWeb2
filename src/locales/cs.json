@@ -15,6 +15,7 @@
       "title": "Zakázky jsou:",
       "open": "Otevřené",
       "close": "Uzavřené",
+      "goToForm": "Přejít na formulář",
       "dialogOpenBtn": "Poslat mail po otevření",
       "dialogTitle": "Přihlásit se k odběru",
       "dialogText": "Zadejte níže svůj email a my vám pošleme oznámení po otevření comissionů."
@@ -90,6 +91,43 @@
       "nfcTag": "ŇFC Tag Manuál",
       "protogenPcb": "Vlastní PCB (obvodová deska)"
     }
+  },
+  "tos": {
+    "greetingsTitle": "Hewwu",
+    "greetingsText": "Děkuji za váš zájem o commissionutí mě. Před odesláním formuláře pro zadání zakázky se ujistěte, že jste si přečetli TOS.",
+    "pricingTitle": "Ceny",
+    "pricingText": "Cena Mini partialu začíná na 800 USD, partial na 1000 USD a samotná hlava na 500 USD. Cena paws je 150 USD a ocásku 200 USD; skutečná cena závisí na designu a doplňcích.",
+    "title": "Obchodní podmínky",
+    "generalTitle": "Obecně",
+    "generalBullets": [
+      "Prosím o pochopení, že z několika otevřených slotů vyberu několik lidí a budu vás kontaktovat pouze v případě, že jste jedním z nich.",
+      "Věk pro objednání je 18 let a více. Pokud je vám méně než 18 let, musí objednávku provést váš rodič nebo opatrovník.",
+      "Abyste si mohli u mě commissionout, musí se vám líbit MŮJ STYL, protože to je důvod, proč jste tady.",
+      "Během procesu zasílám spousty fotografií rozpracovaných prací. Mým cílem je, abyste byli se vším spokojeni, takže pokud máte nějaké problémy, dejte mi prosím hned vědět.",
+      "Před objednáním se prosím ujistěte, že jste s návrhem zcela spokojeni.",
+      "Abyste mohli při odesílání formuláře zakázky přidat své referenční fotografie, musíte být přihlášeni k účtu Google.",
+      "Všechny rozpracované práce budou zveřejněny na soukromém kanálu Telegramu, který je určen pouze pro zadavatele.",
+      "Podrobnosti proberu v telegramové diskusi s každým zákazníkem.",
+      "Až budu mít frontu připravenou, zveřejním ji na své nástěnce Trello, abyste mohli sledovat vývoj.",
+      "Dbejte prosím na to, že jsem stále student a toto je forma přivýdělku, tudíž nemohu dát přesný termín nebo i jen jeho odhad, kdy bude zakázka dokončena."
+    ],
+    "paymentsTitle": "Platby",
+    "paymentsBullets": [
+      "Pokud budete schváleni, musíte zaplatit zálohu do 24 až 96 hodin od mého kontaktu s vámi, jinak bude vaše nabídka zneplatněna a vy přijdete o slot. Pokud jsme se dohodli na ceně a nezaplatíte, riskujete zablokování a zařazení na černou listinu.",
+      "Můj bankovní účet je jedinou platební metodou kterou přijímám. Informace budou zaslány společně s e-mailem o přijetí.",
+      "Ceny stanovuji v amerických dolarech. Google převede libovolnou částku (například 800 usd na czk). Pokud se rozhodnete využít splátkový kalendář, je vyžadována 50% záloha.",
+      "Mohu nabídnout splátkový kalendář na 3 splátky hned (50 % předem a 25 % za měsíc) nebo můžete zaplatit celou částku hned, čímž bude mít vaše zakázka vyšší prioritu / vyšší pořadí ve frontě.",
+      "Platby se v žádném případě nevracejí.",
+      "Na vaší zakázce začnu pracovat až po zaplacení zálohy."
+    ],
+    "shipmentTitle": "Zasílání",
+    "shipmentBullets": [
+      "Všechny objednávky jsou dodávány s běžnou mezinárodní dopravou zdarma a zakázky jsou odesílány nejpozději do týdne po jejich dokončení. U každé zásilky je uvedeno sledovací číslo.",
+      "Objednávky jsou zasílány z České republiky.",
+      "Doprava obvykle trvá 20 až 30 dní.",
+      "Je možnost individuální přepravy, ale na vlastní náklady"
+    ],
+    "footerText": "V případě jakýchkoli dotazů mi neváhejte napsat na Telegram @Bambilijas; rád vám pomohu. Ale zasílejte jen vážné dotazy; respektujte můj čas."
   },
   "footer": {
     "webMadeBy": "Stránku vytvořil"

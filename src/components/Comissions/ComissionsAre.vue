@@ -1,9 +1,20 @@
 <template>
   <div class="py-8">
     <h1 class="text-center">{{ $t('home.comissionsAre.title') }}</h1>
-    <h2 v-if="commisionsAreOpen" class="text-center open">{{ $t('home.comissionsAre.open') }}</h2>
+    <v-container v-if="commisionsAreOpen" class="pa-0">
+      <h2 class="text-center open mb-2">{{ $t('home.comissionsAre.open') }}</h2>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEGidq0iLH3ZOzKZRYRTuE-kn3ewTFQVVoVju5mcZfRqNCyQ/viewform" target="_blank">
+        <v-btn>
+          {{ $t('home.comissionsAre.goToForm') }}
+        </v-btn>
+      </a>
+    </v-container>
+    
     <v-container v-else class="pa-0">
-      <h2 class="text-center close mb-2">{{ $t('home.comissionsAre.close') }}</h2>
+      <h2 class="text-center close ">{{ $t('home.comissionsAre.close') }}</h2>
+      <v-card-subtitle class="pt-0 secondary--text">
+        <a :class="textTheme" class="text-decoration-underline" @click="routeTo('terms-of-service')">{{ $t('tos.title') }}</a>  
+      </v-card-subtitle>
 
       <!-- Dialog -->
       <div v-if="!emailIsSet" class="text-center">
@@ -72,7 +83,10 @@ export default Vue.extend({
     getEmail() {
       this.refreshKey;
       return localStorage.getItem('email')
-    }
+    },
+    textTheme(): string {
+      return this.$vuetify.theme.dark ? 'white--text' : 'black--text'
+    },
   },
   methods: {
     register() {
@@ -85,7 +99,10 @@ export default Vue.extend({
               await new Promise(resolve => setTimeout(() => { this.subscriptionSend = true; resolve('') }, 1000))
               this.dialog = false})
            .catch(err => console.log(err))
-    }
+    },
+    routeTo(routeName: string) {
+      this.$router.push({ name: routeName });
+    },
   },
   created() {
     axios

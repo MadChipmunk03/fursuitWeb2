@@ -15,6 +15,7 @@
       "title": "Comissions are:",
       "open": "Open",
       "close": "Close",
+      "goToForm": "Go to form",
       "dialogOpenBtn": "Send mail once open",
       "dialogTitle": "Subscribe",
       "dialogText": "Enter your email below and we will send you a notification when the comissions are open."
@@ -92,6 +93,43 @@
       "nfcTag": "NFC Tag Manual",
       "protogenPcb": "Custom PCB (circuit board)"
     }
+  },
+  "tos": {
+    "greetingsTitle": "Hewwu there",
+    "greetingsText": "Thank you for your interest in commissioning me. Before submitting a commission form, make sure you have read the TOS.",
+    "pricingTitle": "Pricing",
+    "pricingText": "Mini partials start at $800 USD, partials at $1000 USD, and heads just at $500 USD. The price of the paws is $150 USD and the tail is $200 USD; the actual cost depends on the design and extras.",
+    "title": "Terms of service",
+    "generalTitle": "General",
+    "generalBullets": [
+      "I ask you for your understanding as I will choose only a few people for the few slots I have left and only contact you if you are one of them.",
+      "The ordering age is 18 or older. If you are under 18, you must have your parent or guardian place your order.",
+      "In order to commission me, you must like MY STYLE. I won't do styles of others.",
+      "I'll send you many work-in-progress pictures during the process. My goal is to know you're happy with everything, so if you have any issues, please let me know immediately.",
+      "Before commissioning, please make sure that you are completely satisfied with your design.",
+      "In order to add your reference photographs while submitting a commission form, you must be signed into a Google account.",
+      "All works-in-progress will be published on a commissioners-only, private Telegram channel.",
+      "I'll discuss the specifics in a Telegram discussion with each commissioner.",
+      "When I have a commission queue ready, I'll post it on my Trello board so you can follow the development.",
+      "Please note that I am still a student and this is a form of earning on the side, so I can't give an exact or even an estimate of when the job will be completed."
+    ],
+    "paymentsTitle": "Payments",
+    "paymentsBullets": [
+      "If you are approved, you must pay within 24 to 96 hours after my contact with you; otherwise, your quote will be invalidated and you will forfeit your slot. If we come to an agreement on a price and you don't pay, you risk being blocked and blacklisted.",
+      "My bank account is the only payment method that I accept. Bank info will be sent together with the email of acceptance.",
+      "I set my prices in US dollars. Google will convert any amount (for instance, 800 US dollars to CZK). If you choose to use a payment plan, a 50% down payment is required.",
+      "I can offer 3 installments payment plan (50% up front and 25% in a month) or you can pay the full price right away which will give your commission a higher priority / higher in a queue.",
+      "Payments are NOT refundable in any way.",
+      "I will begin working on your commission once at least the down payment has been done."
+    ],
+    "shipmentTitle": "Shipment",
+    "shipmentBullets": [
+      "All orders come with free international shipping, and commissions are sent out no later than a week after they are finished. There is a tracking number for each shipment.",
+      "Deliveries are made from the Czech Republic.",
+      "Shipping typically takes 20 to 30 days.",
+      "There is an option of an individual shipping method, but it will be at your own expense."
+    ],
+    "footerText": "Feel free to text me on Telegram at @Bambilijas with any queries; I'll be happy to help. But kindly reserve just serious enquiries; respect my time."
   },
   "footer": {
     "webMadeBy": "Website made by"

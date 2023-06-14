@@ -9,13 +9,13 @@
     <v-row>
       <v-col cols="12" md="6">
         <v-card-title class="break-with-word">{{ $t('priceQuote.animal.furTitle') }}</v-card-title>
-        <ValidationProvider name="fur" rules="minmax:1,8" v-slot="{ errors }">
+        <ValidationProvider name="fur" rules="minmax:1,20" v-slot="{ errors }">
           <v-text-field v-model="formVals.fur" :error-messages="errors" type="number" solo />
         </ValidationProvider>
       </v-col>
       <v-col cols="12" md="6">
         <v-card-title class="break-with-word">{{ $t('priceQuote.animal.fleeceTitle') }}</v-card-title>
-        <ValidationProvider name="fleece" rules="minmax:1,5" v-slot="{ errors }">
+        <ValidationProvider name="fleece" rules="minmax:1,10" v-slot="{ errors }">
           <v-text-field v-model="formVals.fleece" :error-messages="errors" type="number" solo />
         </ValidationProvider>
       </v-col>
@@ -77,11 +77,11 @@ export default Vue.extend({
         switch (suitVal) {
           //Mini parcial
           case formVals.suit.values[0]:
-            suitCost = 16_500;
+            suitCost = 17_600;
             break;
           //Parcial
           case formVals.suit.values[1]:
-            suitCost = 24_000;
+            suitCost = 22_000;
             furCost = furCost * 1.5;
             fleeceCost = (fleeceCost / 250) * 300;
             break;
